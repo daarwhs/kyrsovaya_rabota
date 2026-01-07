@@ -1,0 +1,18 @@
+.welcome-section__right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+}
+
+/* Контейнер — должен быть flex и вытягивать колонки по высоте */
+.welcome-section__container {  
+    display: flex;
+    gap: var(--spacing-8);
+    align-items: stretch;       
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}

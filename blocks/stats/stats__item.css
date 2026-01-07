@@ -1,0 +1,17 @@
+/* ============================================
+   ЭЛЕМЕНТ: stats__item
+   ============================================ */
+
+.stats__item {
+    background-color: var(--color-background);
+    padding: var(--spacing-8);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-normal);
+}
+
+.stats__item:hover {
+    transform: translateY(-2px);
+}
+

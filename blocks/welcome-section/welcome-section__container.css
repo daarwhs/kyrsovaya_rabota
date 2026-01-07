@@ -1,0 +1,9 @@
+/* ============================================
+   ЭЛЕМЕНТ: welcome-section__container
+   ============================================ */
+
+.welcome-section__container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+}

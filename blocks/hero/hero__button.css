@@ -1,0 +1,18 @@
+/* ============================================
+   ЭЛЕМЕНТ: hero__button
+   ============================================ */
+
+.hero__button {
+    padding: var(--spacing-4) var(--spacing-8);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--font-size-md);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+

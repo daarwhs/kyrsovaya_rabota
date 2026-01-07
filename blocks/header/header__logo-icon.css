@@ -1,0 +1,18 @@
+/* ============================================
+   ЭЛЕМЕНТ: header__logo-icon
+   ============================================ */
+
+.header__logo-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--color-primary);
+    transition: transform var(--transition-fast);
+}
+
+.header__logo:hover .header__logo-icon {
+    transform: scale(1.1);
+}
+

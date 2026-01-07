@@ -1,0 +1,12 @@
+/* ============================================
+   МОДИФИКАТОР: site-controls__btn--scroll-top
+   ============================================ */
+
+.site-controls__btn--scroll-top {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.site-controls__btn--scroll-top:hover {
+    background-color: var(--color-primary-dark);
+}

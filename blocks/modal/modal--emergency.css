@@ -1,0 +1,12 @@
+/* ============================================
+   МОДИФИКАТОР: modal--emergency
+   ============================================ */
+
+.modal--emergency .modal__container {
+    max-width: 600px;
+}
+
+.modal--emergency .modal__title {
+    color: var(--color-error);
+}
+

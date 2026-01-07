@@ -1,0 +1,19 @@
+/* ============================================
+   ЭЛЕМЕНТ: welcome-section__layout
+   ============================================ */
+
+.welcome-section__layout {
+    display: flex;
+    gap: var(--spacing-12);
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .welcome-section__layout {
+        flex-direction: column;
+        gap: var(--spacing-6);
+        align-items: center;
+    }
+}

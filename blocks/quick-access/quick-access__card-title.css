@@ -1,0 +1,6 @@
+.quick-access__card-title {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-3);
+    font-weight: 700;
+}

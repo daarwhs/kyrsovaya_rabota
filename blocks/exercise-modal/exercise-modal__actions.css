@@ -1,0 +1,20 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-modal__actions
+   ============================================ */
+
+.exercise-modal__actions {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-3);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.exercise-modal__actions .exercise-card__button,
+.exercise-modal__actions .exercise-card__timer-stop {
+    width: auto;
+    flex: 1;
+}

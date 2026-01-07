@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тесты самодиагностики | MindCare</title>
+    <meta name="description" content="Анонимные тесты на уровень стресса, тревожности и выгорания для студентов">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="../../images/interface/logos/logo.jpg.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="../../images/interface/logos/logo.jpg.jpg">
+    <link rel="apple-touch-icon" href="../../images/interface/logos/logo.jpg.jpg">
+
+    <!-- CSS — ЕДИНАЯ ТОЧКА ВХОДА -->
+    <link rel="stylesheet" href="../../styles/main.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="page">
+    <!-- БЛОК: header -->
+    <header class="header">
+        <div class="header__container container">
+            <a href="../../index.html" class="header__logo">
+                <img src="../../images/interface/logos/logo.jpg.jpg" alt="MindCare" class="header__logo-icon" loading="eager" onerror="this.style.display='none';">
+                <span class="header__logo-text">MindCare</span>
+            </a>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="../../index.html" class="header__nav-link">Главная</a></li>
+                    <li class="header__nav-item"><a href="../articles/articles.html" class="header__nav-link">Статьи</a></li>
+                    <li class="header__nav-item"><a href="tests.html" class="header__nav-link header__nav-link--active">Тесты</a></li>
+                    <li class="header__nav-item"><a href="../mood-tracker/mood-tracker.html" class="header__nav-link">Дневник настроения</a></li>
+                    <li class="header__nav-item"><a href="../exercises/exercises.html" class="header__nav-link">Упражнения</a></li>
+                    <li class="header__nav-item"><a href="../contacts/contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+            </div>
+            <button class="header__menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                <span class="header__menu-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- БЛОК: main -->
+    <main class="main main--tests">
+        <div class="container">
+            <div class="tests-header">
+                <div class="section-title__icon">
+                    <img src="../../images/interface/logos/self-tests-logo.jpg.jpg" alt="Тесты самодиагностики" class="section-title__icon-img" loading="eager" onerror="this.style.display='none'; this.parentElement.innerHTML='📋';">
+                </div>
+                <h1 class="tests-header__title">Тесты самодиагностики</h1>
+                <p class="tests-header__subtitle">Анонимные опросники для оценки вашего психологического состояния</p>
+                <div class="tests-header__warning">
+                    ⚠️ <strong>Важно:</strong> Эти тесты не являются медицинской диагностикой.
+                    Результаты сохраняются только на вашем устройстве и никуда не передаются.
+                </div>
+            </div>
+
+            <!-- Карточки доступных тестов -->
+            <div class="tests-grid">
+                <!-- Тест 1: Тревожность -->
+                <div class="test-card test-card--anxiety">
+                    <div class="test-card__image-wrapper test-card__image-wrapper--has-image">
+                        <img src="../../images/content/tests/test-1.jpg.jpg" alt="Тест на уровень тревожности" loading="lazy" class="test-card__image" onerror="this.parentElement.classList.remove('test-card__image-wrapper--has-image'); this.remove();">
+                    </div>
+                    <div class="test-card__header">
+                        <h2 class="test-card__title">Тест на уровень тревожности</h2>
+                    </div>
+                    <div class="test-card__content">
+                        <p class="test-card__description">
+                            12 вопросов для оценки уровня тревоги и беспокойства. Поможет определить, насколько стресс влияет на вашу повседневную жизнь.
+                        </p>
+                        <ul class="test-card__details">
+                            <li>⏱️ 5-7 минут</li>
+                            <li>📝 12 вопросов</li>
+                            <li>🔒 Анонимно</li>
+                        </ul>
+                    </div>
+                    <div class="test-card__footer">
+                        <button class="test-card__button" data-test="anxiety">
+                            Пройти тест
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 2: Выгорание -->
+                <div class="test-card test-card--burnout">
+                    <div class="test-card__image-wrapper test-card__image-wrapper--has-image">
+                        <img src="../../images/content/tests/test-2.jpg.jpg" alt="Опросник учебного выгорания" loading="lazy" class="test-card__image" onerror="this.parentElement.classList.remove('test-card__image-wrapper--has-image'); this.remove();">
+                    </div>
+                    <div class="test-card__header">
+                        <h2 class="test-card__title">Опросник учебного выгорания</h2>
+                    </div>
+                    <div class="test-card__content">
+                        <p class="test-card__description">
+                            15 вопросов для оценки риска эмоционального выгорания от учебы. Определите, нужен ли вам отдых или изменение подхода к обучению.
+                        </p>
+                        <ul class="test-card__details">
+                            <li>⏱️ 7-10 минут</li>
+                            <li>📝 15 вопросов</li>
+                            <li>🔒 Анонимно</li>
+                        </ul>
+                    </div>
+                    <div class="test-card__footer">
+                        <button class="test-card__button" data-test="burnout">
+                            Пройти тест
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 3: Сон -->
+                <div class="test-card test-card--sleep">
+                    <div class="test-card__image-wrapper test-card__image-wrapper--has-image">
+                        <img src="../../images/content/tests/test-3.jpg.jpg" alt="Оценка качества сна" loading="lazy" class="test-card__image" onerror="this.parentElement.classList.remove('test-card__image-wrapper--has-image'); this.remove();">
+                    </div>
+                    <div class="test-card__header">
+                        <h2 class="test-card__title">Оценка качества сна</h2>
+                    </div>
+                    <div class="test-card__content">
+                        <p class="test-card__description">
+                            10 вопросов о ваших привычках сна. Поможет понять, насколько качественно вы отдыхаете и как это влияет на ваше состояние.
+                        </p>
+                        <ul class="test-card__details">
+                            <li>⏱️ 3-5 минут</li>
+                            <li>📝 10 вопросов</li>
+                            <li>🔒 Анонимно</li>
+                        </ul>
+                    </div>
+                    <div class="test-card__footer">
+                        <button class="test-card__button" data-test="sleep">
+                            Пройти тест
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 4: Прокрастинация -->
+                <div class="test-card test-card--procrastination">
+                    <div class="test-card__image-wrapper test-card__image-wrapper--has-image">
+                        <img src="../../images/content/tests/test-4.jpg.jpg" alt="Тест на прокрастинацию" loading="lazy" class="test-card__image" onerror="this.parentElement.classList.remove('test-card__image-wrapper--has-image'); this.remove();">
+                    </div>
+                    <div class="test-card__header">
+                        <h2 class="test-card__title">Тест на прокрастинацию</h2>
+                    </div>
+                    <div class="test-card__content">
+                        <p class="test-card__description">
+                            10 вопросов про откладывание дел и саморегуляцию. Поможет понять, что именно мешает начинать и как это улучшить.
+                        </p>
+                        <ul class="test-card__details">
+                            <li>⏱️ 4-6 минут</li>
+                            <li>📝 10 вопросов</li>
+                            <li>🎯 Практичные советы</li>
+                        </ul>
+                    </div>
+                    <div class="test-card__footer">
+                        <button class="test-card__button" data-test="procrastination">
+                            Пройти тест
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 5: Социальная тревожность -->
+                <div class="test-card test-card--social-anxiety">
+                    <div class="test-card__image-wrapper test-card__image-wrapper--has-image">
+                        <img src="../../images/content/tests/test-5.jpg.jpg" alt="Мини‑тест на социальную тревожность" loading="lazy" class="test-card__image" onerror="this.parentElement.classList.remove('test-card__image-wrapper--has-image'); this.remove();">
+                    </div>
+                    <div class="test-card__header">
+                        <h2 class="test-card__title">Мини‑тест на социальную тревожность</h2>
+                    </div>
+                    <div class="test-card__content">
+                        <p class="test-card__description">
+                            10 вопросов о дискомфорте в общении, выступлениях и ситуациях оценки. Подскажет, насколько выражена социальная тревога.
+                        </p>
+                        <ul class="test-card__details">
+                            <li>⏱️ 4-6 минут</li>
+                            <li>📝 10 вопросов</li>
+                            <li>🧠 КПТ‑подход</li>
+                        </ul>
+                    </div>
+                    <div class="test-card__footer">
+                        <button class="test-card__button" data-test="socialAnxiety">
+                            Пройти тест
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 6: Стрессоустойчивость -->
+                <div class="test-card test-card--resilience">
+                    <div class="test-card__image-wrapper test-card__image-wrapper--has-image">
+                        <img src="../../images/content/tests/test-6.jpg.jpg" alt="Тест на стрессоустойчивость" loading="lazy" class="test-card__image" onerror="this.parentElement.classList.remove('test-card__image-wrapper--has-image'); this.remove();">
+                    </div>
+                    <div class="test-card__header">
+                        <h2 class="test-card__title">Тест на стрессоустойчивость</h2>
+                    </div>
+                    <div class="test-card__content">
+                        <p class="test-card__description">
+                            10 вопросов о восстановлении и ресурсах. Покажет, насколько вы умеете “возвращаться в норму” после нагрузок и дедлайнов.
+                        </p>
+                        <ul class="test-card__details">
+                            <li>⏱️ 4-6 минут</li>
+                            <li>📝 10 вопросов</li>
+                            <li>💪 Ресурсность</li>
+                        </ul>
+                    </div>
+                    <div class="test-card__footer">
+                        <button class="test-card__button" data-test="resilience">
+                            Пройти тест
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Область для прохождения теста -->
+            <div id="testArea" class="test-area">
+                <div class="test-welcome" id="testWelcome">
+                    <div class="test-welcome__icon">📋</div>
+                    <h2 class="test-welcome__title">Выберите тест</h2>
+                    <p class="test-welcome__text">
+                        Пройдите анонимный тест и получите рекомендации.<br>
+                        Все данные сохраняются только на вашем устройстве.
+                    </p>
+                </div>
+            </div>
+
+            <!-- История пройденных тестов -->
+            <div class="tests-history" id="testsHistory">
+                <h2 class="tests-history__title">История ваших тестов</h2>
+               
+                <div class="tests-history__list" id="testsHistoryList">
+                    <!-- Данные подгрузятся из localStorage -->
+                </div>
+               
+                <div class="tests-history__empty" id="testsHistoryEmpty">
+                    <p>Вы ещё не проходили тесты. Результаты будут сохраняться здесь после прохождения.</p>
+                </div>
+               
+                <div class="tests-history__actions">
+                    <button class="tests-history__action-btn" id="clearTestHistory">
+                        Очистить историю
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- БЛОК: footer -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__main">
+                <p class="footer__text">
+                    2026 год. Кострицкая Дарья 301ЭФ. Этот ресурс предоставляет информацию и инструменты самопомощи,
+                    но <strong>НЕ заменяет</strong> профессиональную медицинскую или психологическую помощь.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для экстренной помощи -->
+    <div class="modal modal--emergency" id="emergencyModal" role="dialog" aria-labelledby="emergencyModalTitle" aria-modal="true" hidden>
+        <div class="modal__overlay" data-modal-close></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title" id="emergencyModalTitle">🚨 Экстренная помощь</h2>
+                <button class="modal__close" data-modal-close aria-label="Закрыть">×</button>
+            </div>
+            <div class="modal__body">
+                <div class="emergency-contacts">
+                    <div class="emergency-contact">
+                        <h3 class="emergency-contact__title">Телефон доверия</h3>
+                        <a href="tel:88002000122" class="emergency-contact__phone">📞 8-800-2000-122</a>
+                        <p class="emergency-contact__description">Бесплатная психологическая помощь (круглосуточно)</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h3 class="emergency-contact__title">Телефон доверия для студентов</h3>
+                        <a href="tel:88002004747" class="emergency-contact__phone">📞 8-800-200-47-47</a>
+                        <p class="emergency-contact__description">Бесплатная психологическая помощь студентам</p>
+                    </div>
+                </div>
+                <div class="emergency-actions">
+                    <button class="emergency-action" data-quick-exit>🚪 Быстрый выход с сайта</button>
+                    <a href="../contacts/contacts.html" class="emergency-action">📋 Все контакты поддержки</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Фиксированные кнопки: fallback-разметка -->
+    <div class="site-controls site-controls--inline">
+        <button class="site-controls__btn site-controls__btn--scroll-top" aria-label="Наверх" title="Наверх">
+            <span class="site-controls__btn-icon">↑</span>
+        </button>
+        <button class="site-controls__btn site-controls__btn--emergency" aria-label="Экстренная помощь" title="Экстренная помощь" data-emergency-help>
+            <span class="site-controls__btn-icon">🚨</span>
+        </button>
+        <button class="site-controls__btn site-controls__btn--exit" aria-label="Быстрый выход" title="Быстрый выход (Shift + Escape)" data-quick-exit>
+            <span class="site-controls__btn-icon">🚪</span>
+        </button>
+    </div>
+
+    <!-- Скрипты -->
+    <script type="module" src="../../scripts/utils/utils.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../blocks/site-controls/site-controls.js"></script>
+    <script src="../../blocks/tests-grid/tests-grid.js.js"></script>
+
+    
+</body>
+</html>

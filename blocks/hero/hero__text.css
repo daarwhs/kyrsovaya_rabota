@@ -1,0 +1,11 @@
+/* ============================================
+   ЭЛЕМЕНТ: hero__text
+   ============================================ */
+
+.hero__text {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-8);
+    max-width: none;
+}
+

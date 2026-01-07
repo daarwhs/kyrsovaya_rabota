@@ -1,0 +1,11 @@
+/* ============================================
+   МОДИФИКАТОР: exercise-card__button--restart
+   ============================================ */
+
+.exercise-card__button--restart {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+}
+
+.exercise-card__button--restart:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent-darker) 100%);
+}

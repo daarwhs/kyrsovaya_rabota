@@ -1,0 +1,12 @@
+/* ============================================
+   ЭЛЕМЕНТ: modal__title
+   ============================================ */
+
+.modal__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin: 0;
+}
+

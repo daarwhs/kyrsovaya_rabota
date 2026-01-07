@@ -1,0 +1,27 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-card__button
+   ============================================ */
+
+.exercise-card__button {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    border: none;
+    padding: var(--spacing-3) var(--spacing-6);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+}
+
+.exercise-card__button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.exercise-card__button:active {
+    transform: translateY(0);
+}

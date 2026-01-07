@@ -1,0 +1,4 @@
+.quick-access__subtitle {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-md);
+}

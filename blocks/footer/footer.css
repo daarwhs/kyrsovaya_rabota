@@ -1,0 +1,14 @@
+/* ============================================
+   БЛОК: footer (подвал сайта)
+   ============================================ */
+
+.footer {
+    background-color: var(--color-card-bg);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-8) 0 var(--spacing-4);
+    margin-top: auto;
+    border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+}

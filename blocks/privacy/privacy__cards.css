@@ -1,0 +1,37 @@
+/* ============================================
+   ЭЛЕМЕНТ: privacy__cards
+   ============================================ */
+
+.privacy__cards {
+    display: flex;
+    gap: var(--spacing-6);
+    margin-top: var(--spacing-8);
+    justify-content: space-between;
+}
+
+/* Модификатор для мобильных устройств - карточки в столбик */
+@media (max-width: 768px) {
+    .privacy__cards {
+        flex-direction: column;
+        gap: var(--spacing-4);
+        justify-content: flex-start;
+    }
+}
+
+.privacy__cards::-webkit-scrollbar {
+    height: 6px;
+}
+
+.privacy__cards::-webkit-scrollbar-track {
+    background: var(--color-background-light);
+    border-radius: var(--radius-full);
+}
+
+.privacy__cards::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+}
+
+.privacy__cards::-webkit-scrollbar-thumb:hover {
+    background: var(--color-border-dark);
+}

@@ -1,0 +1,16 @@
+/* ============================================
+   МОДИФИКАТОР: hero__button--secondary
+   ============================================ */
+
+.hero__button--secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.hero__button--secondary:hover {
+    background-color: var(--color-primary-transparent);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+

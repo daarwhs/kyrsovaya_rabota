@@ -1,0 +1,9 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-card__timer-svg
+   ============================================ */
+
+.exercise-card__timer-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}

@@ -1,0 +1,10 @@
+/* ============================================
+   ЭЛЕМЕНТ: header__actions
+   ============================================ */
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+

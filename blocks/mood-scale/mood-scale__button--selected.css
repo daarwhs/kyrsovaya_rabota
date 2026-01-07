@@ -1,0 +1,9 @@
+/* ============================================
+   МОДИФИКАТОР: mood-scale__button--selected
+   ============================================ */
+
+.mood-scale__button--selected {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-transparent);
+    box-shadow: 0 0 0 4px rgba(138, 162, 169, 0.2);
+}

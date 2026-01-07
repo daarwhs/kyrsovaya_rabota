@@ -1,0 +1,11 @@
+/* ============================================
+   МОДИФИКАТОР: test-card--sleep
+   ============================================ */
+
+.test-card--sleep .test-card__image-wrapper {
+    background: linear-gradient(135deg, var(--color-sleep-light) 0%, var(--color-sleep) 100%);
+}
+
+.test-card--sleep .test-card__button {
+    background: linear-gradient(135deg, var(--color-sleep) 0%, var(--color-sleep-dark) 100%);
+}

@@ -1,0 +1,11 @@
+/* ============================================
+   МОДИФИКАТОР: test-card--burnout
+   ============================================ */
+
+.test-card--burnout .test-card__image-wrapper {
+    background: linear-gradient(135deg, var(--color-burnout-light) 0%, var(--color-burnout) 100%);
+}
+
+.test-card--burnout .test-card__button {
+    background: linear-gradient(135deg, var(--color-burnout) 0%, var(--color-burnout-dark) 100%);
+}

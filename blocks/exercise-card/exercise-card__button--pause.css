@@ -1,0 +1,11 @@
+/* ============================================
+   МОДИФИКАТОР: exercise-card__button--pause
+   ============================================ */
+
+.exercise-card__button--pause {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+}
+
+.exercise-card__button--pause:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+}

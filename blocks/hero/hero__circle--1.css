@@ -1,0 +1,12 @@
+/* ============================================
+   МОДИФИКАТОР: hero__circle--1
+   ============================================ */
+
+.hero__circle--1 {
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-primary);
+    top: -100px;
+    right: -50px;
+}
+

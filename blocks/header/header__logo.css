@@ -1,0 +1,21 @@
+/* ============================================
+   ЭЛЕМЕНТ: header__logo
+   ============================================ */
+
+.header__logo {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    transition: color var(--transition-fast);
+}
+
+.header__logo:hover {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+

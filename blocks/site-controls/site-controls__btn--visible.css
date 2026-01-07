@@ -1,0 +1,9 @@
+/* ============================================
+   МОДИФИКАТОР: site-controls__btn--visible
+   ============================================ */
+
+.site-controls__btn--visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}

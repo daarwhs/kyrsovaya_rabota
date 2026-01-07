@@ -1,0 +1,15 @@
+/* ============================================
+   ЭЛЕМЕНТ: article-card__excerpt
+   ============================================ */
+
+.article-card__excerpt {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-2);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 4.5em;
+}
+

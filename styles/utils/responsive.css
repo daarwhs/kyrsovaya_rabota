@@ -1,0 +1,1288 @@
+/* ============================================
+   ИМПОРТ ПЕРЕМЕННЫХ
+   ============================================ */
+
+@import url('variables.css');
+
+/* ============================================
+   БЛОК: main-hero (главный экран)
+   ============================================ */
+
+@import url('main-hero/main-hero.css');
+@import url('main-hero/main-hero__content.css');
+@import url('main-hero/main-hero__title.css');
+@import url('main-hero/main-hero__text.css');
+@import url('main-hero/main-hero__image.css');
+@import url('main-hero/main-hero__image-img.css');
+
+/* ============================================
+   MOBILE FIRST СТИЛИ (от 320px)
+   Все стили выше уже mobile-first
+   ============================================ */
+
+/* Базовые стили для мобильных устройств */
+@media (max-width: 767px) {
+    html {
+        font-size: 16px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-4);
+        max-width: 100%;
+    }
+
+    .hero__content {
+        flex-direction: column;
+        gap: var(--spacing-8);
+        text-align: center;
+    }
+
+    .hero__text-block {
+        text-align: center;
+    }
+    
+    /* Навигация на мобильных - скрыта по умолчанию, показывается через меню */
+    .header__nav {
+        display: none;
+        position: fixed;
+        top: var(--header-height, 60px);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--color-card-bg);
+        border-top: 1px solid var(--color-border);
+        box-shadow: var(--shadow-lg);
+        padding: var(--spacing-6) var(--spacing-4);
+        flex-direction: column;
+        z-index: var(--z-dropdown, 100);
+        overflow-y: auto;
+        animation: slideDown 0.3s ease;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .header__nav[aria-expanded="true"] {
+        display: flex;
+    }
+    
+    .header__nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--spacing-2);
+    }
+    
+    .header__nav-item {
+        width: 100%;
+    }
+    
+    .header__nav-link {
+        display: block;
+        width: 100%;
+        padding: var(--spacing-4) var(--spacing-4);
+        text-align: center;
+        font-size: var(--font-size-lg);
+        border-radius: var(--radius-md);
+        transition: background-color 0.2s ease;
+    }
+    
+    .header__nav-link:hover,
+    .header__nav-link:focus {
+        background-color: var(--color-primary-transparent);
+    }
+    
+    .header__nav-link--active {
+        background-color: var(--color-primary-transparent);
+        color: var(--color-primary);
+        font-weight: 600;
+    }
+    
+    .header__menu-toggle {
+        display: flex;
+    }
+    
+    /* Улучшение читаемости на мобильных */
+    body {
+        font-size: var(--font-size-base);
+        line-height: 1.6;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    h1 {
+        font-size: var(--font-size-2xl);
+        line-height: 1.2;
+        margin-bottom: var(--spacing-4);
+    }
+    
+    h2 {
+        font-size: var(--font-size-xl);
+        line-height: 1.3;
+        margin-bottom: var(--spacing-3);
+    }
+    
+    h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-3);
+    }
+    
+    p {
+        font-size: var(--font-size-base);
+        line-height: 1.7;
+        margin-bottom: var(--spacing-4);
+    }
+    
+    /* Адаптивные сетки для мобильных */
+    .tests-grid,
+    .exercises-grid,
+    .contacts-grid,
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+        padding: 0 var(--spacing-2);
+    }
+
+    .articles-preview__grid {
+        flex-direction: column;
+        gap: var(--spacing-4);
+        overflow-x: visible;
+        padding: 0;
+    }
+
+    .privacy__cards {
+        flex-direction: column;
+        gap: var(--spacing-4);
+        overflow-x: visible;
+        padding: 0;
+    }
+    
+    .quick-access__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+        padding: 0 var(--spacing-2);
+    }
+    
+    /* Адаптивные карточки */
+    .article-card,
+    .test-card,
+    .exercise-card,
+    .contact-card {
+        margin-bottom: var(--spacing-4);
+        width: 100%;
+    }
+    
+    .article-card__content,
+    .test-card__content,
+    .contact-card {
+        padding: var(--spacing-4);
+    }
+    
+    /* Адаптивные кнопки */
+    .hero__button,
+    .article-card__toggle,
+    .test-card__button,
+    .exercise-card__button {
+        width: 100%;
+        max-width: 100%;
+        padding: var(--spacing-4) var(--spacing-6);
+        font-size: var(--font-size-base);
+    }
+    
+    /* Адаптивные формы */
+    .mood-form,
+    .test-welcome,
+    .test-active {
+        padding: var(--spacing-4);
+    }
+    
+    /* Адаптивные модальные окна */
+    .modal__container {
+        max-width: calc(100% - var(--spacing-8));
+        margin: var(--spacing-4);
+        padding: var(--spacing-4);
+    }
+    
+    /* Адаптивные заголовки секций */
+    .section-title {
+        margin-bottom: var(--spacing-6);
+        padding: 0 var(--spacing-2);
+    }
+    
+    .section-title__heading {
+        font-size: var(--font-size-xl);
+    }
+    
+    .section-title__text {
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Адаптивные изображения */
+    .article-card__image img,
+    .test-card__image img,
+    .exercise-card__image img {
+        height: 180px;
+    }
+    
+    /* Адаптивные отступы */
+    .hero {
+        padding: var(--spacing-8) 0;
+    }
+    
+    .main {
+        padding: var(--spacing-6) 0;
+    }
+    
+    /* Адаптивные таблицы и списки */
+    .mood-scale,
+    .mood-scale__container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-2);
+    }
+    
+    .mood-scale__item,
+    .mood-scale__button {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+    }
+    
+    /* Адаптивные списки истории */
+    .tests-history__list,
+    .mood-history__list {
+        gap: var(--spacing-3);
+    }
+    
+    .tests-history__item,
+    .mood-history__item {
+        padding: var(--spacing-4);
+    }
+}
+
+/* ============================================
+   TABLET СТИЛИ (от 768px)
+   ============================================ */
+
+@media (min-width: 768px) {
+    /* Общие улучшения для tablet */
+    .container {
+        padding: 0 var(--spacing-6);
+        max-width: 100%;
+    }
+    
+    html {
+        font-size: 17px;
+    }
+    
+    /* Улучшение читаемости на планшетах */
+    body {
+        font-size: var(--font-size-md);
+        line-height: 1.7;
+    }
+    
+    h1 {
+        font-size: var(--font-size-3xl);
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: var(--font-size-2xl);
+        line-height: 1.3;
+    }
+    
+    h3 {
+        font-size: var(--font-size-xl);
+    }
+    
+    p {
+        font-size: var(--font-size-md);
+        line-height: 1.8;
+    }
+    
+    /* Header для tablet - навигация всегда видна */
+    .header__nav {
+        display: flex !important;
+    }
+    
+    .header__menu-toggle {
+        display: none;
+    }
+    
+    /* Hero для tablet */
+    .hero__title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    /* Адаптивные сетки для планшетов */
+    .articles-preview__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+    }
+    
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .tests-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+    }
+    
+    .exercises-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .contacts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+    }
+    
+    .quick-access__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    /* Адаптивные карточки для планшетов */
+    .article-card__content,
+    .test-card__content {
+        padding: var(--spacing-6);
+    }
+    
+    /* Адаптивные кнопки для планшетов */
+    .hero__button {
+        padding: var(--spacing-5) var(--spacing-10);
+        max-width: 300px;
+    }
+    
+    /* Адаптивные формы для планшетов */
+    .mood-form,
+    .test-welcome {
+        padding: var(--spacing-8);
+    }
+    
+    /* Адаптивные изображения для планшетов */
+    .article-card__image img,
+    .test-card__image img {
+        height: 200px;
+    }
+    
+    .exercise-card__image img {
+        height: 180px;
+    }
+}
+
+/* ============================================
+   DESKTOP СТИЛИ (от 1024px)
+   ============================================ */
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-8);
+        max-width: var(--container-xl);
+    }
+    
+    /* Улучшение читаемости на десктопе */
+    body {
+        font-size: var(--font-size-md);
+        line-height: 1.8;
+    }
+    
+    h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+        line-height: 1.3;
+    }
+    
+    h3 {
+        font-size: 1.75rem;
+    }
+    
+    p {
+        font-size: var(--font-size-md);
+        line-height: 1.9;
+    }
+    
+    /* Articles preview для desktop */
+    .articles-preview__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Articles grid для desktop */
+    .articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-6);
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    /* Contacts grid для desktop */
+    .contacts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Quick access для desktop */
+    .quick-access__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-6);
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    /* Footer для desktop */
+    .footer__content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .footer__section:first-child {
+        grid-column: auto;
+    }
+    
+    /* Улучшение типографики для desktop */
+    body {
+        font-size: var(--font-size-base);
+        line-height: 1.7;
+    }
+    
+    h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+        line-height: 1.3;
+    }
+    
+    h3 {
+        font-size: 1.75rem;
+    }
+    
+    p {
+        font-size: var(--font-size-md);
+        line-height: 1.8;
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP СТИЛИ (от 1280px)
+   ============================================ */
+
+@media (min-width: 1280px) {
+    /* Общие улучшения для desktop */
+    .container {
+        max-width: var(--container-2xl);
+        padding: 0 var(--spacing-8);
+    }
+    
+    html {
+        font-size: 18px;
+    }
+    
+    /* Header для desktop */
+    .header__nav-list {
+        gap: var(--spacing-6);
+    }
+    
+    /* Hero для desktop */
+    .hero__title {
+        font-size: 4rem;
+    }
+    
+    /* Articles preview для desktop */
+    .articles-preview__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Articles grid для large desktop */
+    .articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-6);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Tests grid для desktop */
+    .tests-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Exercises grid для desktop */
+    .exercises-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .exercise-card:nth-child(4),
+    .exercise-card:nth-child(5) {
+        grid-column: span 3;
+        max-width: calc(50% - var(--spacing-3));
+        margin: 0 auto;
+    }
+    
+    /* Contacts grid для desktop */
+    .contacts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Quick access для desktop - 4 карточки в ряд */
+    .quick-access__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-6);
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    /* Info cards для desktop */
+    .info-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Увеличение размеров шрифтов для desktop */
+    h1 {
+        font-size: 3.75rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    /* Улучшение отступов для desktop */
+    .hero {
+        padding: var(--spacing-24) 0;
+    }
+    
+    .main {
+        padding: var(--spacing-16) 0;
+    }
+    
+    /* Улучшение разделов для desktop */
+    .quick-access,
+    .articles-preview,
+    .tests-grid,
+    .exercises-grid {
+        margin-bottom: var(--spacing-16);
+    }
+    
+    /* Улучшение модальных окон для desktop */
+    .modal__content {
+        max-width: 50rem;
+    }
+    
+    /* Улучшение карточек для desktop */
+    .article-card__image {
+        height: 20rem;
+    }
+    
+    /* Улучшение форм для desktop */
+    .mood-form__textarea {
+        min-height: 10rem;
+    }
+}
+
+/* ============================================
+   EXTRA LARGE DESKTOP СТИЛИ (от 1536px)
+   ============================================ */
+
+@media (min-width: 1536px) {
+    html {
+        font-size: 19px;
+    }
+    
+    .container {
+        max-width: 1400px;
+        padding: 0 var(--spacing-10);
+    }
+    
+    /* Улучшение читаемости на очень больших экранах */
+    body {
+        font-size: var(--font-size-md);
+        line-height: 2;
+    }
+    
+    h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 3.25rem;
+        line-height: 1.3;
+    }
+    
+    h3 {
+        font-size: 2.25rem;
+    }
+    
+    p {
+        font-size: 1.125rem;
+        line-height: 2;
+    }
+    
+    /* Articles preview для extra large desktop */
+    .articles-preview__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-6);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .exercises-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .exercise-card:nth-child(4),
+    .exercise-card:nth-child(5) {
+        grid-column: auto;
+        max-width: none;
+        margin: 0;
+    }
+    
+    .contacts-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Quick access для extra large desktop - 4 карточки в ряд */
+    .quick-access__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-8);
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    /* Улучшение типографики для extra large desktop */
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 3.25rem;
+    }
+    
+    p {
+        font-size: 1.125rem;
+        line-height: 1.9;
+    }
+}
+
+/* ============================================
+   ОРИЕНТАЦИЯ LANDSCAPE ДЛЯ МОБИЛЬНЫХ
+   ============================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .header {
+        position: static;
+    }
+    
+    .hero {
+        padding: var(--spacing-8) 0;
+    }
+    
+    .hero__title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .hero__text {
+        font-size: var(--font-size-md);
+        margin-bottom: var(--spacing-4);
+    }
+    
+    .hero__buttons {
+        margin-bottom: var(--spacing-4);
+    }
+    
+    .emergency-exit {
+        bottom: var(--spacing-2);
+    }
+}
+
+/* ============================================
+   ОПТИМИЗАЦИЯ ДЛЯ ПЛАНШЕТОВ В ПОРТРЕТНОЙ ОРИЕНТАЦИИ
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .quick-access__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .articles-preview__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tests-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contacts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   ДОПОЛНИТЕЛЬНЫЕ АДАПТИВНЫЕ СТИЛИ ДЛЯ КОМПОНЕНТОВ
+   ============================================ */
+
+/* Адаптивность для форм */
+@media (max-width: 767px) {
+    .mood-form {
+        padding: var(--spacing-6);
+    }
+    
+    .mood-scale__container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .mood-scale__item {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .emotions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Адаптивность для кнопок */
+@media (max-width: 767px) {
+    .hero__button {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto var(--spacing-3);
+    }
+    
+    .hero__buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .test-result__actions {
+        flex-direction: column;
+    }
+    
+    .test-result__action-button {
+        width: 100%;
+    }
+    
+    .exercise-controls__button {
+        padding: var(--spacing-2) var(--spacing-3);
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Адаптивность для предупреждений и уведомлений */
+@media (max-width: 767px) {
+    .hero__warning,
+    .tests-header__warning,
+    .mood-tracker-header__warning {
+        padding: var(--spacing-3);
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* Адаптивность для полей ввода */
+@media (max-width: 767px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="time"],
+    select,
+    textarea {
+        font-size: 16px; /* Предотвращает масштабирование в iOS */
+    }
+}
+
+/* Адаптивность для скрытия элементов */
+@media (max-width: 767px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   ОПТИМИЗАЦИЯ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ
+   ============================================ */
+
+@media (max-width: 359px) {
+    :root {
+        --font-size-base: 0.9375rem; /* 15px */
+        --font-size-lg: 1.125rem;    /* 18px */
+        --font-size-xl: 1.375rem;    /* 22px */
+        --font-size-2xl: 1.625rem;   /* 26px */
+        --font-size-3xl: 1.875rem;   /* 30px */
+    }
+    
+    .container {
+        padding: 0 var(--spacing-3);
+    }
+    
+    .hero__button {
+        padding: var(--spacing-3) var(--spacing-4);
+    }
+    
+    .test-card,
+    .article-card,
+    .contact-card {
+        padding: var(--spacing-4);
+    }
+    
+    .exercise-card__timer-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .exercise-card__timer-display {
+        width: 70%;
+        max-width: 90px;
+        padding: var(--spacing-1);
+    }
+    
+    .exercise-card__timer-phase {
+        font-size: 0.65rem;
+    }
+    
+    .exercise-card__timer-seconds {
+        font-size: 1.25rem;
+    }
+}
+
+/* ============================================
+   УЛУЧШЕНИЕ ЧИТАЕМОСТИ НА ВСЕХ УСТРОЙСТВАХ
+   ============================================ */
+
+/* Улучшение контрастности для всех текстовых элементов */
+@media (max-width: 767px) {
+    .section-title__heading,
+    .hero__title,
+    .article-card__title,
+    .test-card__title,
+    .contact-card__title,
+    .exercise-card__title {
+        color: var(--color-text-primary);
+        font-weight: 700;
+    }
+    
+    .section-title__text,
+    .hero__text,
+    .article-card__description,
+    .test-card__description,
+    .contact-card__description {
+        color: var(--color-text-secondary);
+        line-height: 1.7;
+    }
+}
+
+/* Улучшение для tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .section-title__heading {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .hero__title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    p {
+        font-size: var(--font-size-md);
+        line-height: 1.8;
+    }
+}
+
+/* Улучшение для desktop */
+@media (min-width: 1024px) {
+    .section-title__heading {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .hero__title {
+        font-size: 4rem;
+    }
+    
+    p {
+        font-size: var(--font-size-md);
+        line-height: 1.9;
+    }
+    
+    .article-card__title,
+    .test-card__title {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* Светлая тема - единственная тема проекта */
+
+/* Адаптивность для предупреждений и уведомлений */
+@media (max-width: 767px) {
+    .hero__warning,
+    .tests-header__warning,
+    .mood-tracker-header__warning {
+        padding: var(--spacing-3);
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* Адаптивность для полей ввода */
+@media (max-width: 767px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="time"],
+    select,
+    textarea {
+        font-size: 16px; /* Предотвращает масштабирование в iOS */
+    }
+}
+
+/* Адаптивность для скрытия элементов */
+@media (max-width: 767px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   ПЕЧАТЬ
+   ============================================ */
+
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    body {
+        background-color: #FDF6E3 !important;
+        color: black !important;
+        font-size: 12pt !important;
+    }
+    
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: underline !important;
+    }
+    
+    .article-full {
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================
+   ДОПОЛНИТЕЛЬНЫЕ АДАПТИВНЫЕ УЛУЧШЕНИЯ
+   ============================================ */
+
+/* Улучшение читаемости на очень маленьких экранах (до 480px) */
+@media (max-width: 480px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-3);
+    }
+    
+    h1 {
+        font-size: var(--font-size-xl);
+    }
+    
+    h2 {
+        font-size: var(--font-size-lg);
+    }
+    
+    h3 {
+        font-size: var(--font-size-md);
+    }
+    
+    /* Таймер упражнений на мобильных */
+    .exercise-card__timer-circle {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .exercise-card__timer-display {
+        width: 70%;
+        max-width: 100px;
+        padding: 0.25rem;
+    }
+    
+    .exercise-card__timer-phase {
+        font-size: 0.7rem;
+        margin-bottom: 0.125rem;
+    }
+    
+    .exercise-card__timer-seconds {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: var(--font-size-sm);
+        line-height: 1.6;
+    }
+    
+    .article-card__content,
+    .test-card__content,
+    .contact-card {
+        padding: var(--spacing-3);
+    }
+    
+    .hero__button,
+    .article-card__toggle,
+    .test-card__button {
+        padding: var(--spacing-3) var(--spacing-5);
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Улучшение для средних планшетов (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .exercises-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .exercises-grid .exercise-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* Улучшение для больших планшетов и маленьких десктопов (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .exercises-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+/* Улучшение для очень больших экранов (1920px+) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    html {
+        font-size: 20px;
+    }
+    
+    body {
+        font-size: var(--font-size-lg);
+        line-height: 2;
+    }
+    
+    h1 {
+        font-size: 4.5rem;
+    }
+    
+    h2 {
+        font-size: 3.5rem;
+    }
+    
+    p {
+        font-size: var(--font-size-lg);
+        line-height: 2.1;
+    }
+}
+
+/* Улучшение для touch-устройств */
+@media (hover: none) and (pointer: coarse) {
+    .hero__button,
+    .article-card__toggle,
+    .test-card__button,
+    .exercise-card__button,
+    .contact-card,
+    .article-card,
+    .test-card {
+        min-height: 44px; /* Минимальный размер для удобного нажатия */
+    }
+    
+    .mood-scale__item,
+    .mood-scale__button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* Улучшение для устройств с высоким DPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* ============================================
+   БЛОК: main-hero (главный экран)
+   ============================================ */
+
+.main-hero {
+    background: linear-gradient(135deg, var(--color-primary-transparent) 0%, var(--color-secondary-transparent) 100%);
+    padding: var(--spacing-12) 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    max-width: var(--container-xl);
+    margin: 0 auto;
+}
+
+/* ============================================
+   ЭЛЕМЕНТ: main-hero__content
+   ============================================ */
+
+.main-hero__content {
+    flex: 2;
+    text-align: left;
+}
+
+/* ============================================
+   ЭЛЕМЕНТ: main-hero__title
+   ============================================ */
+
+.main-hero__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-6);
+    color: var(--color-text-primary);
+}
+
+/* ============================================
+   ЭЛЕМЕНТ: main-hero__text
+   ============================================ */
+
+.main-hero__text {
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-4);
+    color: var(--color-text-secondary);
+}
+
+.main-hero__text--secondary {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   ЭЛЕМЕНТ: main-hero__image
+   ============================================ */
+
+.main-hero__image {
+    flex: 1;
+    max-width: 550px;
+    height: auto;
+    position: relative;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   ЭЛЕМЕНТ: main-hero__image-img
+   ============================================ */
+
+.main-hero__image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-2xl);
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .main-hero {
+        flex-direction: column;
+        gap: var(--spacing-8);
+        padding: var(--spacing-8) 0;
+    }
+    
+    .main-hero__image {
+        height: 280px;
+        max-width: 100%;
+        order: -1; /* Изображение под текстом на планшетах */
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .main-hero {
+        flex-direction: column;
+        gap: var(--spacing-6);
+        padding: var(--spacing-6) 0;
+    }
+    
+    .main-hero__content {
+        text-align: center;
+        order: 1; /* Текст первый */
+    }
+    
+    .main-hero__image {
+        height: 250px;
+        max-width: 100%;
+        order: 2; /* Изображение второе (под текстом) */
+    }
+    
+    .main-hero__title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .main-hero__text {
+        font-size: var(--font-size-base);
+    }
+}
+

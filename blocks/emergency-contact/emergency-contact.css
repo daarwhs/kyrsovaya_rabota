@@ -1,0 +1,16 @@
+/* ============================================
+   БЛОК: emergency-contact (экстренный контакт)
+   ============================================ */
+
+.emergency-contact {
+    background-color: var(--color-background);
+    border: 2px solid var(--color-error);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6);
+    transition: all var(--transition-normal);
+}
+
+.emergency-contact:hover {
+    box-shadow: 0 4px 16px rgba(220, 53, 69, 0.2);
+    transform: translateY(-2px);
+}

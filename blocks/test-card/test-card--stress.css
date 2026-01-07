@@ -1,0 +1,11 @@
+/* ============================================
+   МОДИФИКАТОР: test-card--stress
+   ============================================ */
+
+.test-card--stress .test-card__image-wrapper {
+    background: linear-gradient(135deg, var(--color-stress-light) 0%, var(--color-stress) 100%);
+}
+
+.test-card--stress .test-card__button {
+    background: linear-gradient(135deg, var(--color-stress) 0%, var(--color-stress-dark) 100%);
+}

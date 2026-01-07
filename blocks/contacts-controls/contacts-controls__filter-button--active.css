@@ -1,0 +1,9 @@
+/* ============================================
+   МОДИФИКАТОР: contacts-controls__filter-button--active
+   ============================================ */
+
+.contacts-controls__filter-button--active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}

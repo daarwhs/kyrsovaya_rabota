@@ -1,0 +1,9 @@
+/* ============================================
+   ЭЛЕМЕНТ: test-card__description
+   ============================================ */
+
+.test-card__description {
+    color: var(--color-text-primary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-4);
+}

@@ -1,0 +1,32 @@
+/* ============================================
+   ЭЛЕМЕНТ: mood-form__notes
+   ============================================ */
+
+.mood-form__notes {
+    margin: var(--spacing-8) 0;
+    position: relative;
+}
+
+.mood-form__notes.saving::after {
+    content: '💾 Сохранение...';
+    position: absolute;
+    bottom: var(--spacing-2);
+    right: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    background: var(--color-background);
+    padding: var(--spacing-1) var(--spacing-2);
+    border-radius: var(--radius-md);
+}
+
+.mood-form__notes.saved::after {
+    content: '✅ Сохранено';
+    position: absolute;
+    bottom: var(--spacing-2);
+    right: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-success);
+    background: var(--color-background);
+    padding: var(--spacing-1) var(--spacing-2);
+    border-radius: var(--radius-md);
+}

@@ -1,0 +1,23 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-card__timer-stop
+   ============================================ */
+
+.exercise-card__timer-stop {
+    background: var(--color-error);
+    color: white;
+    border: none;
+    padding: var(--spacing-3) var(--spacing-6);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+}
+
+.exercise-card__timer-stop:hover {
+    background: var(--color-error-dark);
+    transform: translateY(-1px);
+}

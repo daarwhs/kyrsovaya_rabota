@@ -1,0 +1,10 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-card__description
+   ============================================ */
+
+.exercise-card__description {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-6);
+}

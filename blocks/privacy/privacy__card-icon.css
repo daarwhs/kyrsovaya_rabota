@@ -1,0 +1,15 @@
+/* ============================================
+   ЭЛЕМЕНТ: privacy__card-icon
+   ============================================ */
+
+.privacy__card-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 auto var(--spacing-4);
+}

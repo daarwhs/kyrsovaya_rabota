@@ -1,0 +1,17 @@
+/* ============================================
+   ЭЛЕМЕНТ: article-card__read-time
+   ============================================ */
+
+.article-card__read-time {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    color: var(--color-text-light);
+}
+
+.article-card__read-time svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+

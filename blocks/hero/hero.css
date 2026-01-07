@@ -1,0 +1,11 @@
+/* ============================================
+   БЛОК: hero (главный баннер)
+   ============================================ */
+
+.hero {
+    background: linear-gradient(135deg, var(--color-primary-transparent) 0%, var(--color-secondary-transparent) 100%);
+    padding: var(--spacing-12) 0;
+    position: relative;
+    overflow: hidden;
+}
+

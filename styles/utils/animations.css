@@ -1,0 +1,28 @@
+/* ============================================
+   ANIMATIONS: Scroll Appearance
+   ============================================ */
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for cards */
+.features-grid__item:nth-child(1) .animate-on-scroll {
+    transition-delay: 0.1s;
+}
+
+.features-grid__item:nth-child(2) .animate-on-scroll {
+    transition-delay: 0.3s;
+}
+
+.features-grid__item:nth-child(3) .animate-on-scroll {
+    transition-delay: 0.5s;
+}

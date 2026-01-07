@@ -1,0 +1,11 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-modal__instruction
+   ============================================ */
+
+.exercise-modal__instruction {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-6);
+    text-align: center;
+    font-style: italic;
+}

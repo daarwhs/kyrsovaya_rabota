@@ -1,0 +1,570 @@
+
+button,
+.btn,
+[class*="__button"],
+[class*="__btn"] {
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--font-size-md);
+}
+
+button::before,
+.btn::before,
+[class*="__button"]::before,
+[class*="__btn"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:active::before,
+.btn:active::before,
+[class*="__button"]:active::before,
+[class*="__btn"]:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ============================================
+   КНОПКИ ТЕСТОВ
+   ============================================ */
+
+.test-card__button {
+    width: 100%;
+    padding: var(--spacing-4) var(--spacing-6);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: var(--color-text-on-dark);
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    box-shadow: 0 4px 15px rgba(156, 175, 136, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.test-card__button:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(156, 175, 136, 0.4);
+}
+
+.test-card__button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(156, 175, 136, 0.3);
+}
+
+.test-card__button::after {
+    content: '→';
+    font-size: 1.2em;
+    transition: transform var(--transition-normal);
+}
+
+.test-card__button:hover::after {
+    transform: translateX(4px);
+}
+
+/* ============================================
+   КНОПКИ РЕЗУЛЬТАТОВ ТЕСТОВ
+   ============================================ */
+
+.test-result__action-button {
+    padding: var(--spacing-4) var(--spacing-8);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    min-width: 180px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.test-result__action-button--save {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: var(--color-text-on-dark);
+    box-shadow: 0 4px 15px var(--color-accent-transparent);
+}
+
+.test-result__action-button--save:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px var(--color-accent-transparent);
+}
+
+.test-result__action-button--save:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px var(--color-accent-transparent);
+}
+
+.test-result__action-button--save:disabled {
+    background: var(--color-border);
+    color: var(--color-text-light);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+
+.test-result__action-button--save:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.test-result__action-button--again {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 2px 8px var(--color-primary-transparent);
+}
+
+.test-result__action-button--again:hover {
+    background: var(--color-primary-transparent);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(138, 162, 169, 0.3);
+}
+
+.test-result__action-button--again:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(138, 162, 169, 0.2);
+}
+
+/* ============================================
+   КНОПКИ ИСТОРИИ ТЕСТОВ
+   ============================================ */
+
+.tests-history__action-btn {
+    padding: var(--spacing-3) var(--spacing-6);
+    background: var(--color-background-dark);
+    color: var(--color-text-secondary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tests-history__action-btn:hover {
+    background: var(--color-primary-transparent);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 162, 169, 0.2);
+}
+
+.tests-history__action-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   КНОПКИ УПРАЖНЕНИЙ
+   ============================================ */
+
+.exercise-card__button {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: var(--color-text-on-dark);
+    border: none;
+    padding: var(--spacing-4) var(--spacing-8);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    transition: all var(--transition-normal);
+    font-family: var(--font-heading);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    box-shadow: 0 4px 15px var(--color-accent-transparent);
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+
+.exercise-card__button:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--color-accent-transparent);
+}
+
+.exercise-card__button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px var(--color-accent-transparent);
+}
+
+.exercise-card__timer-stop {
+    background: linear-gradient(135deg, var(--color-error) 0%, var(--color-error-dark) 100%);
+    color: var(--color-text-on-dark);
+    border: none;
+    padding: var(--spacing-4) var(--spacing-8);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    box-shadow: 0 4px 15px var(--color-error-transparent);
+    letter-spacing: 0.5px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.exercise-card__timer-stop:hover {
+    background: linear-gradient(135deg, var(--color-error-dark) 0%, var(--color-error) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--color-error-transparent);
+}
+
+.exercise-card__timer-stop:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px var(--color-error-transparent);
+}
+
+/* ============================================
+   КНОПКИ ДНЕВНИКА НАСТРОЕНИЯ
+   ============================================ */
+
+.mood-form__submit {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: var(--color-text-on-dark);
+    border: none;
+    padding: var(--spacing-4) var(--spacing-8);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    letter-spacing: 0.4px;
+    box-shadow: 0 4px 15px rgba(156, 175, 136, 0.3);
+    width: 100%;
+}
+
+.mood-form__submit:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(156, 175, 136, 0.4);
+}
+
+
+.mood-form__submit:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(156, 175, 136, 0.3);
+}
+
+.mood-form__submit:focus,
+.mood-form__submit:focus-visible,
+.btn:focus,
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary-transparent), 0 0 0 6px rgba(0,0,0,0.04);
+}
+
+.mood-form__submit:disabled {
+    background: var(--color-border);
+    color: var(--color-text-light);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+
+.mood-form__submit:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Кнопка экспорта данных */
+.mood-history__export-btn,
+[class*="export"] button,
+button[class*="export"] {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-text-on-dark);
+    border: none;
+    padding: var(--spacing-3) var(--spacing-6);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    box-shadow: 0 3px 10px rgba(138, 162, 169, 0.25);
+    letter-spacing: 0.3px;
+}
+
+.mood-history__export-btn:hover,
+[class*="export"] button:hover,
+button[class*="export"]:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(138, 162, 169, 0.35);
+}
+
+.mood-history__export-btn:active,
+[class*="export"] button:active,
+button[class*="export"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(138, 162, 169, 0.25);
+}
+
+/* ============================================
+   ОБЩИЕ КНОПКИ (btn)
+   ============================================ */
+
+.btn--primary {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: var(--color-text-on-dark);
+    box-shadow: 0 4px 15px rgba(156, 175, 136, 0.3);
+}
+
+.btn--primary:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(156, 175, 136, 0.4);
+}
+
+.btn--primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(156, 175, 136, 0.3);
+}
+
+.btn--secondary {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 2px 8px var(--color-primary-transparent);
+}
+
+.btn--secondary:hover {
+    background: var(--color-primary-transparent);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--color-primary-transparent);
+}
+
+.btn--secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px var(--color-primary-transparent);
+}
+
+.btn--danger {
+    background: linear-gradient(135deg, var(--color-error) 0%, var(--color-error-dark) 100%);
+    color: var(--color-text-on-dark);
+    box-shadow: 0 4px 15px var(--color-error-transparent);
+}
+
+.btn--danger:hover {
+    background: linear-gradient(135deg, var(--color-error-dark) 0%, var(--color-error) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--color-error-transparent);
+}
+
+.btn--danger:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px var(--color-error-transparent);
+}
+
+/* ============================================
+   КНОПКИ ГЕРОЯ (ГЛАВНАЯ СТРАНИЦА)
+   ============================================ */
+
+.hero__button--primary {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: var(--color-text-on-dark);
+    box-shadow: 0 4px 15px rgba(156, 175, 136, 0.3);
+}
+
+.hero__button--primary:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(156, 175, 136, 0.4);
+}
+
+.hero__button--primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(156, 175, 136, 0.3);
+}
+
+.hero__button--secondary {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 2px 8px rgba(138, 162, 169, 0.2);
+}
+
+.hero__button--secondary:hover {
+    background: var(--color-primary-transparent);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(138, 162, 169, 0.3);
+}
+
+.hero__button--secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(138, 162, 169, 0.2);
+}
+
+/* ============================================
+   КНОПКИ НАВИГАЦИИ ТЕСТОВ
+   ============================================ */
+
+.test-active__button {
+    padding: var(--spacing-4) var(--spacing-8);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    min-width: 140px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.test-active__button--prev {
+    background: var(--color-background-dark);
+    color: var(--color-text-secondary);
+    border-color: var(--color-border);
+}
+
+.test-active__button--prev:hover {
+    background: var(--color-primary-transparent);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 162, 169, 0.2);
+}
+
+.test-active__button--prev:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.test-active__button--next {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: var(--color-text-on-dark);
+    box-shadow: 0 4px 15px rgba(156, 175, 136, 0.3);
+}
+
+.test-active__button--next:hover {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(156, 175, 136, 0.4);
+}
+
+.test-active__button--next:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(156, 175, 136, 0.3);
+}
+
+.test-active__button--next:disabled {
+    background: var(--color-border);
+    color: var(--color-text-light);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+
+.test-active__button--next:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+@media (max-width: 767px) {
+    .test-card__button,
+    .test-result__action-button,
+    .exercise-card__button,
+    .exercise-card__timer-stop,
+    .mood-form__submit {
+        padding: var(--spacing-3) var(--spacing-6);
+        font-size: var(--font-size-base);
+    }
+    
+    .test-result__action-button {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .test-active__button {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+/* ============================================
+   АНИМАЦИЯ ЗАГРУЗКИ ДЛЯ КНОПОК
+   ============================================ */
+
+@keyframes buttonLoading {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+button.loading,
+.btn.loading,
+[class*="__button"].loading {
+    animation: buttonLoading 1.5s ease-in-out infinite;
+    pointer-events: none;
+}
+

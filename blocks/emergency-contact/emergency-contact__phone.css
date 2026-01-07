@@ -1,0 +1,18 @@
+/* ============================================
+   ЭЛЕМЕНТ: emergency-contact__phone
+   ============================================ */
+
+.emergency-contact__phone {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-error);
+    text-decoration: none;
+    margin-bottom: var(--spacing-2);
+    transition: color var(--transition-fast);
+}
+
+.emergency-contact__phone:hover {
+    color: var(--color-error-dark);
+}

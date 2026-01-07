@@ -1,0 +1,9 @@
+/* ============================================
+   ЭЛЕМЕНТ: articles-preview__header
+   ============================================ */
+
+.articles-preview__header {
+    text-align: center;
+    margin-bottom: var(--spacing-12);
+}
+

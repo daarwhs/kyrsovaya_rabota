@@ -1,0 +1,12 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-card__title
+   ============================================ */
+
+.exercise-card__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-3);
+    line-height: var(--line-height-tight);
+}

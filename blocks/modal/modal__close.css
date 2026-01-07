@@ -1,0 +1,21 @@
+/* ============================================
+   ЭЛЕМЕНТ: modal__close
+   ============================================ */
+
+.modal__close {
+    background: none;
+    border: none;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: var(--spacing-2);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    line-height: 1;
+}
+
+.modal__close:hover {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-primary);
+}
+

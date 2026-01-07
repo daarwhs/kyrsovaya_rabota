@@ -1,0 +1,16 @@
+/* ============================================
+   МОДИФИКАТОР: hero__button--primary
+   ============================================ */
+
+.hero__button--primary {
+    background-color: var(--color-accent);
+    color: var(--color-text-on-dark);
+}
+
+.hero__button--primary:hover {
+    background-color: var(--color-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+}
+

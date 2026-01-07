@@ -1,0 +1,11 @@
+/* ============================================
+   МОДИФИКАТОР: test-card--procrastination
+   ============================================ */
+
+.test-card--procrastination .test-card__image-wrapper {
+    background: linear-gradient(135deg, var(--color-procrastination-light) 0%, var(--color-procrastination) 100%);
+}
+
+.test-card--procrastination .test-card__button {
+    background: linear-gradient(135deg, var(--color-procrastination) 0%, var(--color-procrastination-dark) 100%);
+}

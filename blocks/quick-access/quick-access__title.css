@@ -1,0 +1,6 @@
+.quick-access__title {
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-2);
+    font-weight: 700;
+}

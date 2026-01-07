@@ -1,0 +1,31 @@
+/* ============================================
+   БЛОК: main (основной контент)
+   ============================================ */
+
+.main {
+    flex: 1;
+    padding: var(--spacing-8) 0;
+}
+
+/* Модификаторы для разных страниц */
+.main--articles {
+    /* Updated: основной фон секции статей использует общий фон сайта */
+    background-color: var(--color-background);
+}
+
+.main--tests {
+    background: linear-gradient(135deg, var(--color-background) 0%, var(--color-secondary-transparent) 100%);
+}
+
+.main--mood-tracker {
+    background-color: var(--color-background);
+}
+
+.main--exercises {
+    background: linear-gradient(135deg, var(--color-accent-transparent) 0%, var(--color-background) 100%);
+}
+
+.main--contacts {
+    /* Updated: фон раздела контактов также выровнен с общим фоном */
+    background-color: var(--color-background);
+}

@@ -1,0 +1,10 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-card__timer-seconds
+   ============================================ */
+
+.exercise-card__timer-seconds {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+}

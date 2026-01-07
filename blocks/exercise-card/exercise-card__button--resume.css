@@ -1,0 +1,11 @@
+/* ============================================
+   МОДИФИКАТОР: exercise-card__button--resume
+   ============================================ */
+
+.exercise-card__button--resume {
+    background: linear-gradient(135deg, var(--color-success) 0%, var(--color-success-dark) 100%);
+}
+
+.exercise-card__button--resume:hover {
+    background: linear-gradient(135deg, var(--color-success-dark) 0%, var(--color-success-darker) 100%);
+}

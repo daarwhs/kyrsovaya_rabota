@@ -1,0 +1,15 @@
+/* ============================================
+   ЭЛЕМЕНТ: privacy__icon
+   ============================================ */
+
+.privacy__icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}

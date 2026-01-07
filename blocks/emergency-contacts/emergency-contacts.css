@@ -1,0 +1,9 @@
+/* ============================================
+   БЛОК: emergency-contacts (экстренные контакты)
+   ============================================ */
+
+.emergency-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}

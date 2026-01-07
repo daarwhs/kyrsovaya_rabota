@@ -1,0 +1,23 @@
+/* ============================================
+   ЭЛЕМЕНТ: welcome-section__text-block
+   ============================================ */
+
+.welcome-section__text-block {
+    width: 214.2px;
+    height: 421.73px;
+    display: flex;
+    align-items: flex-start;
+    padding: var(--spacing-4);
+    background-color: var(--color-background-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .welcome-section__text-block {
+        width: calc(50% - var(--spacing-3));
+        height: auto;
+        min-height: 200px;
+    }
+}

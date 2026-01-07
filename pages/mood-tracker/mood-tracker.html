@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник настроения | MindCare</title>
+    <meta name="description" content="Трекер настроения с графиками для отслеживания эмоционального состояния">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="../../images/interface/logos/logo.jpg.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="../../images/interface/logos/logo.jpg.jpg">
+    <link rel="apple-touch-icon" href="../../images/interface/logos/logo.jpg.jpg">
+
+    <!-- CSS — ЕДИНАЯ ТОЧКА ВХОДА -->
+    <link rel="stylesheet" href="../../styles/main.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Chart.js (для графика настроения) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="page">
+    <!-- БЛОК: header -->
+    <header class="header">
+        <div class="header__container container">
+            <a href="../../index.html" class="header__logo">
+                <img src="../../images/interface/logos/logo.jpg.jpg" alt="MindCare" class="header__logo-icon" loading="eager" onerror="this.style.display='none';">
+                <span class="header__logo-text">MindCare</span>
+            </a>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="../../index.html" class="header__nav-link">Главная</a></li>
+                    <li class="header__nav-item"><a href="../articles/articles.html" class="header__nav-link">Статьи</a></li>
+                    <li class="header__nav-item"><a href="../tests/tests.html" class="header__nav-link">Тесты</a></li>
+                    <li class="header__nav-item"><a href="mood-tracker.html" class="header__nav-link header__nav-link--active">Дневник настроения</a></li>
+                    <li class="header__nav-item"><a href="../exercises/exercises.html" class="header__nav-link">Упражнения</a></li>
+                    <li class="header__nav-item"><a href="../contacts/contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+            </div>
+            <button class="header__menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                <span class="header__menu-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- БЛОК: main -->
+    <main class="main main--mood-tracker">
+        <section class="mood-tracker">
+            <div class="container">
+                <div class="section-title">
+                <div class="section-title__icon">
+                    <img src="../../images/interface/logos/mood-diary-logo.jpg.jpg" alt="Дневник настроения" class="section-title__icon-img" loading="eager" onerror="this.style.display='none'; this.parentElement.innerHTML='📊';">
+                </div>
+                <h1 class="section-title__heading">Дневник настроения</h1>
+                    <p class="section-title__text">Отслеживайте своё состояние ежедневно</p>
+                </div>
+
+                <!-- Форма добавления записи -->
+                    <div class="mood-form">
+                        <div class="mood-form__image-wrapper">
+                        <img src="../../images/interface/logos/mood-tracker.jpg" alt="Дневник настроения" class="mood-form__image" loading="lazy">
+                        </div>
+                        <h3 class="mood-form__title">Как ваше настроение сегодня?</h3>
+                       
+                        <div class="mood-form__scale">
+                            <label class="mood-form__label">Выберите уровень (1 - очень плохо, 10 - отлично):</label>
+                        <div class="mood-scale" id="moodScale">
+                            <button class="mood-scale__button" data-mood="1">😔</button>
+                            <button class="mood-scale__button" data-mood="2">🙁</button>
+                            <button class="mood-scale__button" data-mood="3">😐</button>
+                            <button class="mood-scale__button" data-mood="4">😌</button>
+                            <button class="mood-scale__button" data-mood="5">🙂</button>
+                            <button class="mood-scale__button" data-mood="6">😊</button>
+                            <button class="mood-scale__button" data-mood="7">😄</button>
+                            <button class="mood-scale__button" data-mood="8">😁</button>
+                            <button class="mood-scale__button" data-mood="9">🥳</button>
+                            <button class="mood-scale__button" data-mood="10">🌟</button>
+                        </div>
+                    </div>
+                    <div class="mood-form__notes">
+                        <label for="moodNotes">Заметки:</label>
+                        <textarea id="moodNotes" placeholder="Что повлияло на ваше настроение сегодня?" rows="4"></textarea>
+                    </div>
+                    <button class="mood-form__submit test-card__button" id="saveMood">Сохранить запись</button>
+                </div>
+
+                <!-- График настроения -->
+                <div class="mood-chart">
+                    <div class="mood-chart__header">
+                        <div class="mood-chart__icon">📈</div>
+                        <h3 class="mood-chart__title">График настроения за неделю</h3>
+                    </div>
+                    <div class="mood-chart__canvas-wrapper">
+                        <canvas id="moodChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- История записей -->
+                <div class="mood-history">
+                    <div class="mood-history__header">
+                        <div class="mood-history__icon">📔</div>
+                        <h3 class="mood-history__title">Ваши записи</h3>
+                    </div>
+                    <div class="mood-history__list" id="moodHistoryList"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- БЛОК: footer -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__main">
+                <p class="footer__text">
+                    2026 год. Кострицкая Дарья 301ЭФ. Этот ресурс предоставляет информацию и инструменты самопомощи,
+                    но <strong>НЕ заменяет</strong> профессиональную медицинскую или психологическую помощь.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно редактирования -->
+    <div class="modal modal--edit-mood" id="editMoodModal" hidden>
+        <div class="modal__overlay" data-modal-close></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <h3 class="modal__title">Редактировать запись</h3>
+                <button class="modal__close" data-modal-close aria-label="Закрыть">×</button>
+            </div>
+            <div class="modal__body" id="editMoodForm">
+                <!-- Форма редактирования будет сюда вставляться динамически -->
+            </div>
+            <div class="modal__footer">
+                <button class="btn btn--primary" id="saveEditedMood">Сохранить изменения</button>
+                <button class="btn btn--danger" id="deleteMoodEntry">Удалить запись</button>
+                <button class="btn btn--secondary" data-modal-close>Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для экстренной помощи -->
+    <div class="modal modal--emergency" id="emergencyModal" role="dialog" aria-labelledby="emergencyModalTitle" aria-modal="true" hidden>
+        <div class="modal__overlay" data-modal-close></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title" id="emergencyModalTitle">🚨 Экстренная помощь</h2>
+                <button class="modal__close" data-modal-close aria-label="Закрыть">×</button>
+            </div>
+            <div class="modal__body">
+                <div class="emergency-contacts">
+                    <div class="emergency-contact">
+                        <h3 class="emergency-contact__title">Телефон доверия</h3>
+                        <a href="tel:88002000122" class="emergency-contact__phone">📞 8-800-2000-122</a>
+                        <p class="emergency-contact__description">Бесплатная психологическая помощь (круглосуточно)</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h3 class="emergency-contact__title">Телефон доверия для студентов</h3>
+                        <a href="tel:88002004747" class="emergency-contact__phone">📞 8-800-200-47-47</a>
+                        <p class="emergency-contact__description">Бесплатная психологическая помощь студентам</p>
+                    </div>
+                </div>
+                <div class="emergency-actions">
+                    <button class="emergency-action" data-quick-exit>🚪 Быстрый выход с сайта</button>
+                    <a href="../contacts/contacts.html" class="emergency-action">📋 Все контакты поддержки</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Фиксированные кнопки: fallback-разметка -->
+    <div class="site-controls site-controls--inline">
+        <button class="site-controls__btn site-controls__btn--scroll-top" aria-label="Наверх" title="Наверх">
+            <span class="site-controls__btn-icon">↑</span>
+        </button>
+        <button class="site-controls__btn site-controls__btn--emergency" aria-label="Экстренная помощь" title="Экстренная помощь" data-emergency-help>
+            <span class="site-controls__btn-icon">🚨</span>
+        </button>
+        <button class="site-controls__btn site-controls__btn--exit" aria-label="Быстрый выход" title="Быстрый выход (Shift + Escape)" data-quick-exit>
+            <span class="site-controls__btn-icon">🚪</span>
+        </button>
+    </div>
+
+    <!-- Скрипты -->
+    <script type="module" src="../../scripts/utils/utils.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../blocks/site-controls/site-controls.js"></script>
+    <script src="../../blocks/mood-form/mood-form.js.js"></script>
+
+    
+</body>
+</html>

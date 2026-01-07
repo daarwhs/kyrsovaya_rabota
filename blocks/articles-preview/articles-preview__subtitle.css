@@ -1,0 +1,13 @@
+/* ============================================
+   ЭЛЕМЕНТ: articles-preview__subtitle
+   ============================================ */
+
+.articles-preview__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-6);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

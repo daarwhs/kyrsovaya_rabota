@@ -1,0 +1,30 @@
+/* ============================================
+   ЭЛЕМЕНТ: articles-preview__grid
+   ============================================ */
+
+.articles-preview__grid {
+    display: flex;
+    gap: var(--spacing-6);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--spacing-4);
+}
+
+.articles-preview__grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.articles-preview__grid::-webkit-scrollbar-track {
+    background: var(--color-background-light);
+    border-radius: var(--radius-full);
+}
+
+.articles-preview__grid::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+}
+
+.articles-preview__grid::-webkit-scrollbar-thumb:hover {
+    background: var(--color-border-dark);
+}
+

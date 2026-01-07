@@ -1,0 +1,12 @@
+/* ============================================
+   МОДИФИКАТОР: modal--exercise
+   ============================================ */
+
+.modal--exercise .modal__container {
+    max-width: 700px;
+}
+
+.modal--exercise .modal__title {
+    color: var(--color-primary);
+}
+

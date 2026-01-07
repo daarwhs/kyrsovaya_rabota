@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare - Поддержка психического здоровья студентов</title>
+    <meta name="description" content="Платформа для поддержки психического здоровья студентов с инструментами самопомощи, конфиденциальной диагностикой и базой контактов специалистов">
+    <meta name="keywords" content="психическое здоровье, студенты, стресс, выгорание, самопомощь, психологическая помощь">
+    <meta name="author" content="MindCare">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mindcare.example.com">
+    <meta property="og:title" content="MindCare - Поддержка психического здоровья студентов">
+    <meta property="og:description" content="Инструменты самопомощи, анонимные тесты и контакты психологической поддержки для студентов">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MindCare - Поддержка психического здоровья студентов">
+    <meta name="twitter:description" content="Инструменты самопомощи, анонимные тесты и контакты психологической поддержки для студентов">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8AA2A9">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/interface/logos/logo.jpg.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="images/interface/logos/logo.jpg.jpg">
+    <link rel="apple-touch-icon" href="images/interface/logos/logo.jpg.jpg">
+
+    <!-- CSS — ЕДИНАЯ ТОЧКА ВХОДА -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- No-JS fallback -->
+    <noscript>
+        <style>
+            .page__js-warning {
+                display: block !important;
+                background: #D4A574;
+                color: white;
+                padding: 1rem;
+                text-align: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 9999;
+            }
+        </style>
+    </noscript>
+</head>
+<body class="page">
+    <!-- No-JS Warning -->
+    <div class="page__js-warning" style="display: none;">
+        ⚠️ Для полной функциональности сайта включите JavaScript в настройках браузера
+    </div>
+
+    <!-- БЛОК: header (шапка сайта) -->
+    <header class="header">
+        <div class="header__container container">
+            <a href="index.html" class="header__logo">
+                <img src="images/interface/logos/logo.jpg.jpg" alt="MindCare" class="header__logo-icon" loading="eager" onerror="this.style.display='none';">
+                <span class="header__logo-text">MindCare</span>
+            </a>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="index.html" class="header__nav-link header__nav-link--active">Главная</a></li>
+                    <li class="header__nav-item"><a href="pages/articles/articles.html" class="header__nav-link">Статьи</a></li>
+                    <li class="header__nav-item"><a href="pages/tests/tests.html" class="header__nav-link">Тесты</a></li>
+                    <li class="header__nav-item"><a href="pages/mood-tracker/mood-tracker.html" class="header__nav-link">Дневник настроения</a></li>
+                    <li class="header__nav-item"><a href="pages/exercises/exercises.html" class="header__nav-link">Упражнения</a></li>
+                    <li class="header__nav-item"><a href="pages/contacts/contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button id="headerSosBtn" class="header__button-emergency" aria-label="Экстренная помощь">
+                    SOS
+                </button>
+            </div>
+            <button class="header__menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                <span class="header__menu-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- БЛОК: main (основной контент) -->
+    <main class="main" id="main">
+        <!-- БЛОК: main-hero (главный экран) -->
+        <section class="main-hero" aria-labelledby="heroTitle">
+            <div class="main-hero__decoration">
+                <div class="main-hero__decoration-circle"></div>
+            </div>
+            <div class="main-hero__container">
+                <div class="main-hero__content">
+                    <h1 class="main-hero__title" id="heroTitle">
+                        Твоё ментальное здоровье <br>
+                        <span style="color: var(--color-primary);">имеет значение</span>
+                    </h1>
+                    <p class="main-hero__text">
+                        Студенческая жизнь полна вызовов. MindCare — это безопасное пространство, где ты можешь найти поддержку, понять свои эмоции и научиться справляться со стрессом.
+                    </p>
+                    <div class="main-hero__buttons">
+                        <a href="pages/tests/tests.html" class="main-hero__btn main-hero__btn--primary">Пройти чек-ап</a>
+                        <a href="pages/articles/articles.html" class="main-hero__btn main-hero__btn--secondary">Читать статьи</a>
+                    </div>
+                </div>
+                <div class="main-hero__visual">
+                    <div class="main-hero__image-wrapper">
+                        <img src="images/interface/home-page.jpg.jpg" alt="Спокойствие и поддержка" class="main-hero__image" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК: state-selection (выбор состояния) -->
+        <section class="state-selection">
+            <div class="state-selection__container">
+                <div class="state-selection__box" id="stateSelectionBox">
+                    <label for="userState" class="state-selection__label">Я чувствую...</label>
+                    <div class="state-selection__select-wrapper">
+                        <select id="userState" class="state-selection__select">
+                            <option value="" selected disabled>Выберите состояние</option>
+                            <option value="anxiety">Тревогу и беспокойство</option>
+                            <option value="burnout">Усталость и выгорание</option>
+                            <option value="stress">Сильный стресс</option>
+                            <option value="apathy">Апатию и грусть</option>
+                            <option value="panic">Паническую атаку</option>
+                        </select>
+                        <span class="state-selection__select-arrow">▼</span>
+                    </div>
+                    <button id="stateActionBtn" class="state-selection__button">
+                        Получить помощь
+                        <span class="state-selection__btn-icon">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК: features-grid (ключевые возможности) -->
+        <section class="features-grid" aria-labelledby="featuresTitle">
+            <div class="features-grid__container">
+                <h2 class="visually-hidden" id="featuresTitle">Возможности платформы</h2>
+                <ul class="features-grid__list">
+                    <li class="features-grid__item">
+                        <article class="features-card features-card--checkup">
+                            <div class="features-card__icon-wrapper">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <h3 class="features-card__title">Чек-ап состояния</h3>
+                            <p class="features-card__description">Быстрый тест на уровень выгорания и тревожности с рекомендациями.</p>
+                            <a href="pages/tests/tests.html" class="features-card__link">
+                                Пройти тест
+                                <span class="features-card__link-icon">→</span>
+                            </a>
+                        </article>
+                    </li>
+                    <li class="features-grid__item">
+                        <article class="features-card features-card--first-aid">
+                            <div class="features-card__icon-wrapper">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                                </svg>
+                            </div>
+                            <h3 class="features-card__title">Первая помощь</h3>
+                            <p class="features-card__description">Техники «заземления» и дыхания, если помощь нужна прямо сейчас.</p>
+                            <a href="pages/exercises/exercises.html" class="features-card__link">
+                                Мне плохо сейчас
+                                <span class="features-card__link-icon">→</span>
+                            </a>
+                        </article>
+                    </li>
+                    <li class="features-grid__item">
+                        <article class="features-card">
+                            <div class="features-card__icon-wrapper">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                </svg>
+                            </div>
+                            <h3 class="features-card__title">База знаний</h3>
+                            <p class="features-card__description">Статьи о том, как совмещать учебу и личную жизнь без ущерба себе.</p>
+                            <a href="pages/articles/articles.html" class="features-card__link">
+                                Читать статьи
+                                <span class="features-card__link-icon">→</span>
+                            </a>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- БЛОК: footer (подвал) -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container container">
+            <div class="footer__main text-center">
+                <p class="footer__text">
+                    © 2026 MindCare. Кострицкая Дарья 301ЭФ.
+                </p>
+                <p class="footer__text" style="max-width: 600px; margin: 0 auto 1rem; opacity: 0.7;">
+                    Здесь вы найдете материалы для самостоятельной работы, но это не замена профессиональной помощи врача или психолога.
+                </p>
+                <p class="footer__text">
+                    <strong>Телефон доверия: <a href="tel:88002000122" style="color: inherit; text-decoration: underline;">8-800-2000-122</a></strong>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для экстренной помощи -->
+    <div class="modal modal--emergency" id="emergencyModal" role="dialog" aria-labelledby="emergencyModalTitle" aria-modal="true" hidden>
+        <div class="modal__overlay" data-modal-close></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title" id="emergencyModalTitle">🚨 Экстренная помощь</h2>
+                <button class="modal__close" id="closeEmergencyModal" data-modal-close aria-label="Закрыть">×</button>
+            </div>
+            <div class="modal__body">
+                <div class="emergency-contacts" id="emergencyContactsList">
+                    <div class="emergency-contact">
+                        <h3 class="emergency-contact__title">Телефон доверия</h3>
+                        <a href="tel:88002000122" class="emergency-contact__phone">📞 8-800-2000-122</a>
+                        <p class="emergency-contact__description">Бесплатная психологическая помощь (круглосуточно)</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h3 class="emergency-contact__title">Телефон доверия для студентов</h3>
+                        <a href="tel:88002004747" class="emergency-contact__phone">📞 8-800-200-47-47</a>
+                        <p class="emergency-contact__description">Бесплатная психологическая помощь студентам</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h3 class="emergency-contact__title">Телефон доверия Приднестровья</h3>
+                        <a href="tel:080022222" class="emergency-contact__phone">📞 0-800-2-22-22</a>
+                        <p class="emergency-contact__description">Круглосуточная психологическая помощь в ПМР</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h3 class="emergency-contact__title">Экстренные службы ПМР</h3>
+                        <a href="tel:112" class="emergency-contact__phone">📞 112</a>
+                        <p class="emergency-contact__description">Единый номер экстренных служб</p>
+                    </div>
+                </div>
+                <div class="emergency-actions">
+                    <button class="emergency-action" data-quick-exit>🚪 Быстрый выход с сайта</button>
+                    <a href="pages/contacts/contacts.html" class="emergency-action">📋 Все контакты поддержки</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Фиксированные кнопки -->
+    <div class="site-controls site-controls--inline">
+        <button class="site-controls__btn site-controls__btn--scroll-top" aria-label="Наверх" title="Наверх" id="scrollTop">
+            <span class="site-controls__btn-icon">↑</span>
+        </button>
+        <button class="site-controls__btn site-controls__btn--emergency" aria-label="Экстренная помощь" title="Экстренная помощь" data-emergency-help>
+            <span class="site-controls__btn-icon">🚨</span>
+        </button>
+        <button class="site-controls__btn site-controls__btn--exit" aria-label="Быстрый выход" title="Быстрый выход (Shift + Escape)" data-quick-exit>
+            <span class="site-controls__btn-icon">🚪</span>
+        </button>
+    </div>
+
+    <!-- Скрипты -->
+    <script type="module" src="scripts/utils/utils.js"></script>
+    <script src="blocks/site-controls/site-controls.js"></script>
+    <script src="scripts/main.js"></script>
+
+    <!-- Локальная логика главной страницы -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Логика блока "Я чувствую..."
+            const stateSelect = document.getElementById('userState');
+            const actionBtn = document.getElementById('stateActionBtn');
+            const selectionBox = document.getElementById('stateSelectionBox');
+
+            if (actionBtn && stateSelect) {
+                actionBtn.addEventListener('click', function() {
+                    const value = stateSelect.value;
+
+                    if (!value) {
+                        selectionBox.classList.add('state-selection__box--warning');
+                        setTimeout(() => selectionBox.classList.remove('state-selection__box--warning'), 500);
+                        return;
+                    }
+
+                    switch(value) {
+                        case 'anxiety':
+                        case 'stress':
+                            window.location.href = 'pages/exercises/exercises.html';
+                            break;
+                        case 'burnout':
+                        case 'apathy':
+                            window.location.href = 'pages/tests/tests.html';
+                            break;
+                        case 'panic':
+                            const emergencyModal = document.getElementById('emergencyModal');
+                            if (emergencyModal) {
+                                emergencyModal.hidden = false;
+                                document.body.style.overflow = 'hidden';
+                            }
+                            break;
+                        default:
+                            window.location.href = 'pages/articles/articles.html';
+                    }
+                });
+            }
+
+            // Кнопка SOS в шапке
+            const headerSosBtn = document.getElementById('headerSosBtn');
+            if (headerSosBtn) {
+                headerSosBtn.addEventListener('click', function() {
+                    const emergencyModal = document.getElementById('emergencyModal');
+                    if (emergencyModal) {
+                        emergencyModal.hidden = false;
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

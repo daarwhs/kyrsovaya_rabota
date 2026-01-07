@@ -1,0 +1,13 @@
+/* ============================================
+   ЭЛЕМЕНТ: article-card__content
+   ============================================ */
+
+.article-card__content {
+    padding: var(--spacing-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacing-3);
+    flex: 1 1 auto;
+}
+

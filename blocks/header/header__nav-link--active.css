@@ -1,0 +1,10 @@
+/* ============================================
+   МОДИФИКАТОР: header__nav-link--active
+   ============================================ */
+
+.header__nav-link--active {
+    color: var(--color-primary);
+    background-color: var(--color-primary-transparent);
+    font-weight: 600;
+}
+

@@ -1,0 +1,621 @@
+/* ============================================
+   СТИЛИ ДЛЯ ИЗОБРАЖЕНИЙ И ИКОНОК
+   ============================================ */
+
+/* ============================================
+   ОБЩИЕ СТИЛИ ДЛЯ ИЗОБРАЖЕНИЙ
+   ============================================ */
+
+/* Общие стили для всех изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Предотвращение разъезжания изображений */
+img[width],
+img[height] {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Изображения в контейнерах */
+.article-card__image img,
+.exercise-card__image img,
+.test-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ============================================
+   БЛОК: section-title (заголовки секций с иконками)
+   ============================================ */
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+    position: relative;
+}
+
+.section-title__icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    width: 120px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/* Изображение в иконке секции */
+.section-title__icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal);
+}
+
+.section-title__icon:hover .section-title__icon-img {
+    transform: scale(1.05);
+}
+
+/* Fallback для эмодзи, если изображение не загрузилось */
+.section-title__icon:not(:has(img)) {
+    font-size: 4rem;
+    width: auto;
+    height: auto;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.section-title__heading {
+    font-size: var(--font-size-3xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-4);
+    font-family: var(--font-heading);
+}
+
+.section-title__text {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    max-width: var(--container-md);
+    margin: 0 auto;
+}
+
+/* ============================================
+   БЛОК: mood-chart (график настроения)
+   ============================================ */
+
+.mood-chart {
+    background: var(--color-card-bg);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-8);
+    position: relative;
+    overflow: hidden;
+}
+
+.mood-chart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--color-primary) 0%, 
+        var(--color-secondary) 50%,
+        var(--color-accent) 100%);
+    opacity: 0.6;
+}
+
+.mood-chart__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-6);
+}
+
+.mood-chart__icon {
+    font-size: 2.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.mood-chart__title {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary-dark);
+    margin: 0;
+    font-family: var(--font-heading);
+}
+
+.mood-chart__canvas-wrapper {
+    position: relative;
+    padding: var(--spacing-4);
+    background: var(--color-background-dark);
+    border-radius: var(--radius-lg);
+    min-height: 300px;
+}
+
+/* ============================================
+   БЛОК: mood-history (история записей)
+   ============================================ */
+
+.mood-history {
+    background: var(--color-card-bg);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.mood-history::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--color-accent) 0%, 
+        var(--color-primary) 50%,
+        var(--color-secondary) 100%);
+    opacity: 0.6;
+}
+
+.mood-history__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-6);
+}
+
+.mood-history__icon {
+    font-size: 2.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.mood-history__title {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary-dark);
+    margin: 0;
+    font-family: var(--font-heading);
+}
+
+/* ============================================
+   БЛОК: test-card (карточки тестов с изображениями)
+   ============================================ */
+
+.test-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.test-card__image-wrapper {
+    width: 100%;
+    height: 180px;
+    min-height: 180px;
+    background: linear-gradient(135deg, 
+        var(--color-primary-transparent) 0%, 
+        var(--color-secondary-transparent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-4);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-normal);
+}
+
+.test-card:hover .test-card__image-wrapper {
+    box-shadow: var(--shadow-md);
+}
+
+/* Поддержка реальных изображений в тестах */
+.test-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-lg);
+}
+
+.test-card__image-wrapper--has-image {
+    background: var(--color-background-dark);
+    position: relative;
+}
+
+.test-card__image-wrapper--has-image .test-card__image-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+}
+
+.test-card__image-wrapper--has-image:hover .test-card__image-icon {
+    opacity: 0.1;
+}
+
+.test-card__image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(138, 162, 169, 0.1) 0%, 
+        rgba(180, 167, 214, 0.1) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.test-card:hover .test-card__image-wrapper::before {
+    opacity: 1;
+}
+
+/* Иконки поверх изображений больше не используются */
+.test-card__image-icon {
+    display: none;
+}
+
+/* ============================================
+   БЛОК: exercise-card (карточки упражнений)
+   ============================================ */
+
+.exercise-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.exercise-card__image-wrapper {
+    width: 100%;
+    height: 200px;
+    min-height: 200px;
+    background: linear-gradient(135deg, 
+        var(--color-accent-transparent) 0%, 
+        var(--color-primary-transparent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-4);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-normal);
+}
+
+.exercise-card:hover .exercise-card__image-wrapper {
+    box-shadow: var(--shadow-md);
+}
+
+/* Поддержка реальных изображений в упражнениях */
+.exercise-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.exercise-card__image-wrapper--has-image {
+    background: var(--color-background-dark);
+}
+
+.exercise-card__image-wrapper--has-image .exercise-card__image-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+}
+
+.exercise-card__image-wrapper--has-image:hover .exercise-card__image-icon {
+    opacity: 0.1;
+}
+
+/* Иконки поверх изображений больше не используются */
+.exercise-card__image-icon {
+    display: none;
+}
+
+/* ============================================
+   БЛОК: article-card (карточки статей)
+   ============================================ */
+
+.article-card__image {
+    width: 100%;
+    height: 200px;
+    min-height: 200px;
+    background: linear-gradient(135deg, 
+        var(--color-background-dark) 0%, 
+        var(--color-background-light) 100%);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--spacing-4);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-normal);
+}
+
+.article-card:hover .article-card__image {
+    box-shadow: var(--shadow-md);
+}
+
+.article-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.article-card:hover .article-card__image img {
+    transform: scale(1.05);
+}
+
+.article-card__image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
+}
+
+/* Плейсхолдер для изображений статей (показывается только если нет изображения) */
+.article-card__image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--color-text-light);
+    background: linear-gradient(135deg, 
+        var(--color-background-dark) 0%, 
+        var(--color-background-light) 100%);
+    opacity: 0.6;
+}
+
+/* Скрываем плейсхолдер, если есть изображение */
+.article-card__image:has(img) .article-card__image-placeholder {
+    display: none;
+}
+
+.article-card__image.has-placeholder .article-card__image-placeholder {
+    display: flex;
+}
+
+/* ============================================
+   БЛОК: hero (главная страница)
+   ============================================ */
+
+.hero__image-wrapper {
+    flex: 1;
+    max-width: 550px;
+    height: 320px;
+    position: relative;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-2xl);
+}
+
+/* Иконка в hero-секции больше не используется, так как есть изображение */
+.hero__image-icon {
+    display: none;
+}
+
+/* ============================================
+   БЛОК: test-result (результаты тестов)
+   ============================================ */
+
+.test-result__image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--spacing-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    background: linear-gradient(135deg, 
+        var(--color-accent-transparent) 0%, 
+        var(--color-secondary-transparent) 100%);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+@media (max-width: 767px) {
+    .section-title__icon {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+    }
+    
+    .section-title__icon-img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .section-title__heading {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .test-card__image-wrapper,
+    .exercise-card__image-wrapper {
+        height: 150px;
+        min-height: 150px;
+    }
+    
+    .test-card__image-wrapper img,
+    .exercise-card__image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .test-card__image-icon,
+    .exercise-card__image-icon {
+        font-size: 4rem;
+    }
+    
+    .article-card__image {
+        height: 180px;
+        min-height: 180px;
+    }
+    
+    .article-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .hero__image-wrapper {
+        height: 280px;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .hero__image-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .hero__image-icon {
+        font-size: 5rem;
+    }
+    
+    .test-result__image {
+        width: 100px;
+        height: 100px;
+        font-size: 4rem;
+    }
+    
+    .mood-chart__icon,
+    .mood-history__icon {
+        font-size: 2rem;
+    }
+    
+    .mood-form__image-wrapper {
+        height: 150px;
+    }
+    
+    .mood-form__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title__icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+    
+    .section-title__icon-img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .test-card__image-wrapper,
+    .exercise-card__image-wrapper {
+        height: 120px;
+    }
+    
+    .test-card__image-icon,
+    .exercise-card__image-icon {
+        font-size: 3rem;
+    }
+    
+    .section-title__icon-img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Адаптивность для больших экранов */
+@media (min-width: 1200px) {
+    .hero__image-wrapper {
+        height: 350px;  /* Немного больше на очень больших экранах */
+        max-width: 600px;  /* Чуть шире на больших экранах */
+    }
+}
+
+/* Адаптивность для планшетов - оставляем существующие стили */
+@media (max-width: 1024px) {
+    .hero__image-wrapper {
+        height: 280px;
+        max-width: 100%;
+        margin: 0;
+    }
+}
+

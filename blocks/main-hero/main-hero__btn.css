@@ -1,0 +1,36 @@
+.main-hero__btn {
+    padding: var(--spacing-4) var(--spacing-8);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--font-size-md);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.main-hero__btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-dark);
+}
+
+.main-hero__btn--primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.main-hero__btn--secondary {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-secondary);
+    border-color: var(--color-border);
+}
+
+.main-hero__btn--secondary:hover {
+    background-color: var(--color-primary-transparent);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}

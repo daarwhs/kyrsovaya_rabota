@@ -1,0 +1,13 @@
+.quick-access__card-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-4);
+    display: flex;
+    justify-content: center;
+}
+
+.quick-access__card-icon svg {
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+}

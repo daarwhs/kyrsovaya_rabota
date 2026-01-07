@@ -1,0 +1,10 @@
+/* ============================================
+   ЭЛЕМЕНТ: hero__circle
+   ============================================ */
+
+.hero__circle {
+    position: absolute;
+    border-radius: var(--radius-full);
+    opacity: 0.1;
+}
+

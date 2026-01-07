@@ -1,0 +1,15 @@
+/* ============================================
+   ЭЛЕМЕНТ: header__container
+   ============================================ */
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+    position: relative;
+}
+

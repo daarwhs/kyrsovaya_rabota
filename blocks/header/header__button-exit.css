@@ -1,0 +1,36 @@
+/* ============================================
+   ЭЛЕМЕНТ: header__button-exit
+   ============================================ */
+
+.header__button-exit {
+    /* Added: базовый стиль кнопки быстрого выхода в шапке */
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+    background-color: transparent;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-normal),
+                color var(--transition-normal),
+                box-shadow var(--transition-normal),
+                transform var(--transition-fast);
+}
+
+.header__button-exit:hover {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-on-dark);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    /* Added: адаптивные размеры для мобильных устройств */
+    .header__button-exit {
+        padding: 0.45rem 0.8rem;
+        font-size: var(--font-size-xs);
+    }
+}
+
+

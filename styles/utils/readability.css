@@ -1,0 +1,222 @@
+/* ============================================
+   ГЛОБАЛЬНЫЕ СТИЛИ ДЛЯ ЧИТАЕМОСТИ ТЕКСТА
+   Применяем тот же подход, что в контактах
+   ============================================ */
+
+/* Улучшенная читаемость для светлой темы - заголовки */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] .section-title__heading,
+[data-theme="light"] .hero__title,
+[data-theme="light"] .article-card__title,
+[data-theme="light"] .test-card__title,
+[data-theme="light"] .exercise-card__title,
+[data-theme="light"] .contact-card__name,
+[data-theme="light"] .mood-form__title,
+[data-theme="light"] .test-welcome__title,
+[data-theme="light"] .test-result__title,
+[data-theme="light"] .mood-history__title {
+    color: var(--color-text-primary) !important;
+    font-weight: 700;
+}
+
+/* Улучшенная читаемость для светлой темы - основной текст */
+[data-theme="light"] p,
+[data-theme="light"] .article-card__description,
+[data-theme="light"] .test-card__description,
+[data-theme="light"] .exercise-card__description,
+[data-theme="light"] .section-title__text,
+[data-theme="light"] .hero__text,
+[data-theme="light"] .article-card__meta,
+[data-theme="light"] .test-card__details,
+[data-theme="light"] .contact-card__phone,
+[data-theme="light"] .contact-card__site,
+[data-theme="light"] .contact-card__hours,
+[data-theme="light"] .contact-card__city,
+[data-theme="light"] .test-welcome__text,
+[data-theme="light"] .test-welcome__instructions,
+[data-theme="light"] .test-welcome__privacy,
+[data-theme="light"] .test-result__description,
+[data-theme="light"] .mood-form__label,
+[data-theme="light"] .mood-history__item-mood,
+[data-theme="light"] .test-active__question {
+    color: var(--color-text-secondary) !important;
+}
+
+/* Улучшенная читаемость для светлой темы - второстепенный текст */
+[data-theme="light"] .article-card__description,
+[data-theme="light"] .test-card__description,
+[data-theme="light"] .contact-card__description,
+[data-theme="light"] .mood-history__item-notes,
+[data-theme="light"] .test-result__description,
+[data-theme="light"] .test-welcome__instructions li,
+[data-theme="light"] .test-welcome__privacy p,
+[data-theme="light"] .test-active__option {
+    color: var(--color-text-light) !important;
+}
+
+/* Улучшенная читаемость для светлой темы - метаданные и метки */
+[data-theme="light"] .article-card__meta,
+[data-theme="light"] .test-card__details,
+[data-theme="light"] .contact-card__hours::before,
+[data-theme="light"] .contact-card__city::before,
+[data-theme="light"] small,
+[data-theme="light"] .text-muted,
+[data-theme="light"] .test-card__details li,
+[data-theme="light"] .mood-history__item-date,
+[data-theme="light"] .test-result__date {
+    color: var(--color-text-light) !important;
+}
+
+/* Улучшенная читаемость для светлой темы - ссылки */
+[data-theme="light"] a:not(.btn):not(.button):not(.hero__button):not(.article-card__toggle):not(.test-card__button):not(.exercise-card__button):not(.footer__link):not(.header__nav-link):not(.quick-access__card-link) {
+    color: var(--color-accent) !important;
+    font-weight: 600;
+}
+
+[data-theme="light"] a:not(.btn):not(.button):not(.hero__button):not(.article-card__toggle):not(.test-card__button):not(.exercise-card__button):not(.footer__link):not(.header__nav-link):not(.quick-access__card-link):hover {
+    color: var(--color-accent-dark) !important;
+}
+
+/* Улучшенная читаемость для темной темы - все элементы используют переменные */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] .section-title__heading,
+[data-theme="dark"] .hero__title,
+[data-theme="dark"] .article-card__title,
+[data-theme="dark"] .test-card__title,
+[data-theme="dark"] .exercise-card__title,
+[data-theme="dark"] .mood-form__title,
+[data-theme="dark"] .test-welcome__title,
+[data-theme="dark"] .test-result__title {
+    color: var(--color-text-primary) !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .article-card__description,
+[data-theme="dark"] .test-card__description,
+[data-theme="dark"] .exercise-card__description,
+[data-theme="dark"] .section-title__text,
+[data-theme="dark"] .hero__text,
+[data-theme="dark"] .test-welcome__text,
+[data-theme="dark"] .test-result__description,
+[data-theme="dark"] .mood-form__label,
+[data-theme="dark"] .test-active__question {
+    color: var(--color-text-primary) !important;
+}
+
+[data-theme="dark"] .article-card__meta,
+[data-theme="dark"] .test-card__details,
+[data-theme="dark"] .contact-card__description,
+[data-theme="dark"] .mood-history__item-notes,
+[data-theme="dark"] .test-welcome__instructions,
+[data-theme="dark"] .test-welcome__privacy,
+[data-theme="dark"] .test-active__option {
+    color: var(--color-text-secondary) !important;
+}
+
+[data-theme="dark"] small,
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .test-card__details li,
+[data-theme="dark"] .mood-history__item-date,
+[data-theme="dark"] .test-result__date {
+    color: var(--color-text-light) !important;
+}
+
+/* Улучшенная читаемость для всех полей ввода */
+[data-theme="light"] input[type="text"],
+[data-theme="light"] input[type="email"],
+[data-theme="light"] input[type="tel"],
+[data-theme="light"] input[type="number"],
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
+}
+
+[data-theme="light"] input[type="text"]:focus,
+[data-theme="light"] input[type="email"]:focus,
+[data-theme="light"] input[type="tel"]:focus,
+[data-theme="light"] input[type="number"]:focus,
+[data-theme="light"] textarea:focus,
+[data-theme="light"] select:focus {
+    color: var(--color-text-primary) !important;
+    border-color: var(--color-accent-dark) !important;
+}
+
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="tel"],
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
+}
+
+[data-theme="dark"] input[type="text"]:focus,
+[data-theme="dark"] input[type="email"]:focus,
+[data-theme="dark"] input[type="tel"]:focus,
+[data-theme="dark"] input[type="number"]:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+    color: var(--color-text-primary) !important;
+    border-color: var(--color-accent) !important;
+}
+
+/* Улучшенная читаемость для предупреждений и информационных блоков */
+[data-theme="light"] .hero__warning,
+[data-theme="light"] .tests-header__warning,
+[data-theme="light"] .mood-tracker-header__warning,
+[data-theme="light"] .test-result__warning,
+[data-theme="light"] .article-full__tip,
+[data-theme="light"] .test-welcome__instructions,
+[data-theme="light"] .test-welcome__privacy {
+    color: var(--color-text-secondary) !important;
+}
+
+[data-theme="dark"] .hero__warning,
+[data-theme="dark"] .tests-header__warning,
+[data-theme="dark"] .mood-tracker-header__warning,
+[data-theme="dark"] .test-result__warning,
+[data-theme="dark"] .article-full__tip,
+[data-theme="dark"] .test-welcome__instructions,
+[data-theme="dark"] .test-welcome__privacy {
+    color: var(--color-text-primary) !important;
+}
+
+/* Улучшенная читаемость для истории тестов */
+[data-theme="light"] .tests-history__item-title,
+[data-theme="light"] .tests-history__item-date,
+[data-theme="light"] .tests-history__item-level {
+    color: var(--color-text-secondary) !important;
+}
+
+[data-theme="dark"] .tests-history__item-title,
+[data-theme="dark"] .tests-history__item-date,
+[data-theme="dark"] .tests-history__item-level {
+    color: var(--color-text-primary) !important;
+}
+
+/* Улучшенная читаемость для пустых состояний */
+[data-theme="light"] .tests-history__empty,
+[data-theme="light"] .contacts-grid__empty,
+[data-theme="light"] .mood-history__empty {
+    color: var(--color-text-light) !important;
+}
+
+[data-theme="dark"] .tests-history__empty,
+[data-theme="dark"] .contacts-grid__empty,
+[data-theme="dark"] .mood-history__empty {
+    color: var(--color-text-light) !important;
+}

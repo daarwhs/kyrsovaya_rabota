@@ -1,0 +1,94 @@
+/* ============================================
+   БЛОК: notification (уведомления)
+   ============================================ */
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 350px;
+    animation: notification-slide-in 0.3s ease;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.notification:hover {
+    transform: translateY(-2px);
+}
+
+.notification__icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.notification__message {
+    flex: 1;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+}
+
+/* Модификаторы типов уведомлений */
+.notification--success {
+    background: var(--color-success-transparent, rgba(76, 175, 80, 0.1));
+    color: var(--color-text-primary);
+    border-left: 4px solid var(--color-success);
+}
+
+.notification--error {
+    background: var(--color-error-transparent, rgba(244, 67, 54, 0.1));
+    color: var(--color-text-primary);
+    border-left: 4px solid var(--color-error);
+}
+
+.notification--warning {
+    background: var(--color-warning-transparent, rgba(255, 152, 0, 0.1));
+    color: var(--color-text-primary);
+    border-left: 4px solid var(--color-warning);
+}
+
+.notification--info {
+    background: var(--color-info-transparent, rgba(33, 150, 243, 0.1));
+    color: var(--color-text-primary);
+    border-left: 4px solid var(--color-info);
+}
+
+/* Анимации */
+@keyframes notification-slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes notification-slide-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+    .notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+

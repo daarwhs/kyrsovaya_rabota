@@ -1,0 +1,12 @@
+/* ============================================
+   МОДИФИКАТОР: site-controls__btn--exit
+   ============================================ */
+
+.site-controls__btn--exit {
+    background-color: var(--color-error);
+    color: white;
+}
+
+.site-controls__btn--exit:hover {
+    background-color: var(--color-error-dark);
+}

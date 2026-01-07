@@ -1,0 +1,10 @@
+/* ============================================
+   БЛОК: emergency-actions (действия экстренной помощи)
+   ============================================ */
+
+.emergency-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-6);
+}

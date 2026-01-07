@@ -1,0 +1,29 @@
+/* ============================================
+   ЭЛЕМЕНТ: mood-scale__button
+   ============================================ */
+
+.mood-scale__button {
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background-color: var(--color-background);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.mood-scale__button:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+}
+
+.mood-scale__button:active {
+    transform: scale(0.95);
+}

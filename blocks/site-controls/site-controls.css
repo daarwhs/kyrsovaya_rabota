@@ -1,0 +1,41 @@
+/* ============================================
+   БЛОК: site-controls (панель управления сайтом)
+   ============================================ */
+
+.site-controls {
+    /* Updated: панель перенесена в правый нижний угол, чтобы группировать
+       кнопки "Наверх", "Экстренная помощь" и "Выход" рядом друг с другом */
+    position: fixed;
+    right: var(--spacing-4);
+    bottom: var(--spacing-4);
+    z-index: var(--z-controls);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+/* Added: модификатор для явной вставки панели в разметку (fallback на случай, если JS не отработал) */
+.site-controls--inline {
+    position: fixed;
+    right: var(--spacing-4);
+    bottom: var(--spacing-4);
+    z-index: var(--z-emergency);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+@media (max-width: 640px) {
+    /* Added: более компактное расположение на мобильных устройствах */
+    .site-controls {
+        right: var(--spacing-3);
+        bottom: var(--spacing-3);
+        gap: var(--spacing-2);
+    }
+
+    .site-controls--inline {
+        right: var(--spacing-3);
+        bottom: var(--spacing-3);
+        gap: var(--spacing-2);
+    }
+}

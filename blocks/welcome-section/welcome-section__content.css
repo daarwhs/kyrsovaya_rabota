@@ -1,0 +1,15 @@
+/* ============================================
+   ЭЛЕМЕНТ: welcome-section__content
+   ============================================ */
+
+.welcome-section__content {
+    width: 214.2px;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .welcome-section__content {
+        width: 100%;
+    }
+}
+

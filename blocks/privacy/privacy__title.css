@@ -1,0 +1,13 @@
+/* ============================================
+   ЭЛЕМЕНТ: privacy__title
+   ============================================ */
+
+.privacy__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-8);
+    line-height: var(--line-height-tight);
+}
+

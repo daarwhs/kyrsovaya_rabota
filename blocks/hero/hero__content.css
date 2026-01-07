@@ -1,0 +1,13 @@
+/* ============================================
+   ЭЛЕМЕНТ: hero__content
+   ============================================ */
+
+.hero__content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+

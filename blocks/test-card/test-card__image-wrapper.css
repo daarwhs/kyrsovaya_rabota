@@ -1,0 +1,13 @@
+/* ============================================
+   ЭЛЕМЕНТ: test-card__image-wrapper
+   ============================================ */
+
+.test-card__image-wrapper {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, var(--color-primary-transparent) 0%, var(--color-accent-transparent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}

@@ -1,0 +1,9 @@
+/* ============================================
+   БЛОК: stats (статистика)
+   ============================================ */
+
+.stats {
+    padding: var(--spacing-16) 0;
+    background-color: var(--color-primary-transparent);
+}
+

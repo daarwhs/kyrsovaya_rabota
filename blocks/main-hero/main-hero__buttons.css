@@ -1,0 +1,6 @@
+.main-hero__buttons {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-6);
+}

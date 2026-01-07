@@ -1,0 +1,9 @@
+/* ============================================
+   ЭЛЕМЕНТ: privacy__card-text
+   ============================================ */
+
+.privacy__card-text {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}

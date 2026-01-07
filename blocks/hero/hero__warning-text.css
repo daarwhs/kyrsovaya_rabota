@@ -1,0 +1,11 @@
+/* ============================================
+   ЭЛЕМЕНТ: hero__warning-text
+   ============================================ */
+
+.hero__warning-text {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin: 0;
+    max-width: none;
+}
+

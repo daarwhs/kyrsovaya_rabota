@@ -1,0 +1,19 @@
+/* ============================================
+   ЭЛЕМЕНТ: tests-header__warning
+   ============================================ */
+
+.tests-header__warning {
+    background-color: var(--color-warning-transparent);
+    color: var(--color-warning-dark);
+    padding: var(--spacing-4) var(--spacing-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-warning);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.tests-header__warning strong {
+    font-weight: 600;
+}

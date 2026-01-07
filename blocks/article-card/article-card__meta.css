@@ -1,0 +1,12 @@
+/* ============================================
+   ЭЛЕМЕНТ: article-card__meta
+   ============================================ */
+
+.article-card__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+

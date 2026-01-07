@@ -1,0 +1,15 @@
+/* ============================================
+   ЭЛЕМЕНТ: hero__warning
+   ============================================ */
+
+.hero__warning {
+    background-color: var(--color-warning-transparent);
+    border-left: 4px solid var(--color-warning);
+    padding: var(--spacing-4);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-8);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+}
+

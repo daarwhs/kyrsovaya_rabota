@@ -1,0 +1,19 @@
+/* ============================================
+   ЭЛЕМЕНТ: welcome-section__text
+   ============================================ */
+
+.welcome-section__text {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-6);
+}
+
+.welcome-section__text p {
+    margin-bottom: var(--spacing-4);
+}
+
+.welcome-section__text p:last-child {
+    margin-bottom: 0;
+}
+

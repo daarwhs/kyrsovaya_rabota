@@ -1,0 +1,378 @@
+/* ============================================
+   УЛУЧШЕННЫЕ СТИЛИ ДЛЯ ДНЕВНИКА НАСТРОЕНИЯ
+   ============================================ */
+
+/* ============================================
+   БЛОК: mood-form__notes (поле заметок)
+   ============================================ */
+
+.mood-form__notes {
+    margin: var(--spacing-8) 0;
+    position: relative;
+}
+
+.mood-form__notes label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-4);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.mood-form__notes label::before {
+    content: '💭';
+    font-size: 1.5em;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.mood-form__notes textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: var(--spacing-5) var(--spacing-6);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-primary);
+    background: var(--color-card-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    resize: vertical;
+    transition: all var(--transition-normal);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.mood-form__notes textarea::placeholder {
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+.mood-form__notes textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(156, 175, 136, 0.2),
+                0 0 0 4px rgba(156, 175, 136, 0.1);
+    background: var(--color-background-light);
+}
+
+.mood-form__notes textarea:hover:not(:focus) {
+    border-color: var(--color-primary);
+    box-shadow: 0 3px 12px rgba(138, 162, 169, 0.15);
+}
+
+/* Декоративный фон для поля заметок */
+.mood-form__notes::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(156, 175, 136, 0.03) 0%, 
+        rgba(180, 167, 214, 0.03) 50%,
+        rgba(138, 162, 169, 0.03) 100%);
+    border-radius: var(--radius-xl);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: -1;
+}
+
+.mood-form__notes:has(textarea:focus)::after {
+    opacity: 1;
+}
+
+/* Счетчик символов (если нужно) */
+.mood-form__notes-char-count {
+    display: block;
+    text-align: right;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+    margin-top: var(--spacing-2);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.mood-form__notes textarea:focus ~ .mood-form__notes-char-count,
+.mood-form__notes:has(textarea:focus) .mood-form__notes-char-count {
+    opacity: 1;
+}
+
+/* Анимация при сохранении */
+.mood-form__notes.saving textarea {
+    border-color: var(--color-accent);
+    background: linear-gradient(90deg, 
+        var(--color-card-bg) 0%, 
+        rgba(156, 175, 136, 0.1) 50%,
+        var(--color-card-bg) 100%);
+    background-size: 200% 100%;
+    animation: saving 1.5s ease-in-out infinite;
+}
+
+@keyframes saving {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Успешное сохранение */
+.mood-form__notes.saved textarea {
+    border-color: var(--color-success);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    animation: savedPulse 0.6s ease-out;
+}
+
+@keyframes savedPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ============================================
+   БЛОК: mood-form (общий контейнер формы)
+   ============================================ */
+
+.mood-form {
+    background: var(--color-card-bg);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-8);
+    position: relative;
+    overflow: hidden;
+}
+
+.mood-form__image-wrapper {
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    margin: 0 auto var(--spacing-6);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, 
+        var(--color-accent-transparent) 0%, 
+        var(--color-primary-transparent) 100%);
+}
+
+.mood-form__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform var(--transition-slow);
+}
+
+.mood-form:hover .mood-form__image {
+    transform: scale(1.05);
+}
+
+.mood-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--color-accent) 0%, 
+        var(--color-secondary) 50%,
+        var(--color-primary) 100%);
+    opacity: 0.6;
+}
+
+.mood-form__title {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-6);
+    font-family: var(--font-heading);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+}
+
+.mood-form__title::before {
+    content: '📝';
+    font-size: 1.2em;
+}
+
+/* ============================================
+   БЛОК: mood-history (история записей)
+   ============================================ */
+
+.mood-history__item {
+    background: var(--color-card-bg);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-6);
+    margin-bottom: var(--spacing-4);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.mood-history__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, 
+        var(--color-accent) 0%, 
+        var(--color-secondary) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.mood-history__item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.mood-history__item:hover::before {
+    opacity: 1;
+}
+
+.mood-history__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-3);
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+}
+
+.mood-history__item-date {
+    font-size: var(--font-size-lg);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+.mood-history__item-mood {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+}
+
+.mood-emoji {
+    font-size: 1.5em;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.mood-score {
+    color: var(--color-text-primary);
+}
+
+.mood-history__item-notes {
+    background: var(--color-background-dark);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-4);
+    margin-top: var(--spacing-3);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-secondary);
+    position: relative;
+    animation: fadeIn 0.4s ease;
+}
+
+.mood-history__item-notes::before {
+    content: '💭';
+    position: absolute;
+    top: var(--spacing-2);
+    right: var(--spacing-2);
+    opacity: 0.2;
+    font-size: 1.5em;
+}
+
+.mood-actions {
+    margin-top: var(--spacing-3);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-delete {
+    padding: var(--spacing-2) var(--spacing-4);
+    background: transparent;
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+.btn-delete:hover {
+    background: var(--color-error);
+    color: var(--color-text-on-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+@media (max-width: 767px) {
+    .mood-form {
+        padding: var(--spacing-6);
+        border-radius: var(--radius-xl);
+    }
+    
+    .mood-form__title {
+        font-size: var(--font-size-xl);
+        flex-direction: column;
+        gap: var(--spacing-2);
+    }
+    
+    .mood-form__notes textarea {
+        min-height: 100px;
+        padding: var(--spacing-4) var(--spacing-5);
+        font-size: var(--font-size-sm);
+    }
+    
+    .mood-history__item {
+        padding: var(--spacing-4);
+    }
+}
+

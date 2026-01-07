@@ -1,0 +1,11 @@
+/* ============================================
+   МОДИФИКАТОР: test-card--anxiety
+   ============================================ */
+
+.test-card--anxiety .test-card__image-wrapper {
+    background: linear-gradient(135deg, var(--color-anxiety-light) 0%, var(--color-anxiety) 100%);
+}
+
+.test-card--anxiety .test-card__button {
+    background: linear-gradient(135deg, var(--color-anxiety) 0%, var(--color-anxiety-dark) 100%);
+}

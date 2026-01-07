@@ -1,0 +1,19 @@
+/* ============================================
+   ЭЛЕМЕНТ: articles-preview__link-all
+   ============================================ */
+
+.articles-preview__link-all {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.articles-preview__link-all:hover {
+    color: var(--color-primary-dark);
+}
+

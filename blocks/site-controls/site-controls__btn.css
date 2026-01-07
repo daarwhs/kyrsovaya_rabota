@@ -1,0 +1,71 @@
+/* ============================================
+   ЭЛЕМЕНТ: site-controls__btn
+   ============================================ */
+
+.site-controls__btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: var(--radius-full);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    font-size: 20px;
+    position: relative;
+    z-index: 100;
+}
+
+.site-controls__btn:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateX(-4px);
+}
+
+/* Специфические стили для кнопки экстренной помощи */
+.site-controls__btn--emergency {
+    border: 3px solid #D4A574;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.site-controls__btn--emergency:hover {
+    background-color: #D4A574;
+    border-color: #C49764;
+    transform: translateX(-4px) scale(1.05);
+}
+
+/* Специфические стили для кнопки выхода */
+.site-controls__btn--exit {
+    border: 3px solid #C97B7B;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.site-controls__btn--exit:hover {
+    background-color: #C97B7B;
+    border-color: #B86B6B;
+    transform: translateX(-4px) scale(1.05);
+}
+
+/* Стили для иконок кнопок экстренных действий */
+.site-controls__btn-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    color: #2F3E46;
+    line-height: 1;
+    position: relative;
+    z-index: 101;
+}
+

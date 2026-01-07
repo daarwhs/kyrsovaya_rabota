@@ -1,0 +1,18 @@
+/* ============================================
+   ЭЛЕМЕНТ: contact-card__phone
+   ============================================ */
+
+.contact-card__phone {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-2);
+}
+
+.contact-card__phone a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.contact-card__phone a:hover {
+    text-decoration: underline;
+}

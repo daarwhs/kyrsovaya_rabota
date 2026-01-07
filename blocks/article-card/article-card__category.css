@@ -1,0 +1,17 @@
+/* ============================================
+   ЭЛЕМЕНТ: article-card__category
+   ============================================ */
+
+.article-card__category {
+    display: inline-block;
+    background-color: var(--color-primary-transparent);
+    color: var(--color-primary-dark);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-3);
+}
+

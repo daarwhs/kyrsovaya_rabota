@@ -1,0 +1,22 @@
+/* ============================================
+   БЛОК: section-title (заголовок секции)
+   ============================================ */
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+    position: relative;
+    padding-bottom: var(--spacing-4);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    border-radius: var(--radius-full);
+}

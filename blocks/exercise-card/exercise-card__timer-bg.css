@@ -1,0 +1,9 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-card__timer-bg
+   ============================================ */
+
+.exercise-card__timer-bg {
+    fill: none;
+    stroke: var(--color-background-dark);
+    stroke-width: 8;
+}

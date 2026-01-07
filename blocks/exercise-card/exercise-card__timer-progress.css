@@ -1,0 +1,13 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-card__timer-progress
+   ============================================ */
+
+.exercise-card__timer-progress {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 0.3s ease;
+}

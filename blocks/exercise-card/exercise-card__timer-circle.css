@@ -1,0 +1,10 @@
+/* ============================================
+   ЭЛЕМЕНТ: exercise-card__timer-circle
+   ============================================ */
+
+.exercise-card__timer-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto var(--spacing-4);
+}

@@ -1,0 +1,17 @@
+/* ============================================
+   ЭЛЕМЕНТ: test-card__details
+   ============================================ */
+
+.test-card__details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.test-card__details li {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}

@@ -1,0 +1,44 @@
+/* ============================================
+   ЭЛЕМЕНТ: header__menu-icon
+   ============================================ */
+
+.header__menu-icon,
+.header__menu-icon::before,
+.header__menu-icon::after {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-normal);
+}
+
+.header__menu-icon {
+    position: relative;
+}
+
+.header__menu-icon::before {
+    position: absolute;
+    top: -8px;
+}
+
+.header__menu-icon::after {
+    position: absolute;
+    bottom: -8px;
+}
+
+.header__menu-toggle[aria-expanded="true"] .header__menu-icon {
+    background-color: transparent;
+}
+
+.header__menu-toggle[aria-expanded="true"] .header__menu-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.header__menu-toggle[aria-expanded="true"] .header__menu-icon::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+

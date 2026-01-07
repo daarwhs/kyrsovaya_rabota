@@ -1,0 +1,11 @@
+/* ============================================
+   ЭЛЕМЕНТ: stats__description
+   ============================================ */
+
+.stats__description {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
