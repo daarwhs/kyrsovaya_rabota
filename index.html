@@ -118,7 +118,7 @@
         </section>
 
         <!-- БЛОК: state-selection (выбор состояния) -->
-        <section class="state-selection">
+        <!--<section class="state-selection">
             <div class="state-selection__container">
                 <div class="state-selection__box" id="stateSelectionBox">
                     <label for="userState" class="state-selection__label">Я чувствую...</label>
@@ -139,7 +139,30 @@
                     </button>
                 </div>
             </div>
-        </section>
+        </section>-->
+
+        <div class="state-selection">
+    <div class="state-selection__container">
+        <div class="state-selection__box" id="stateSelectionBox">
+            <label for="userState" class="state-selection__label">Я чувствую...</label>
+            <div class="state-selection__select-wrapper">
+                <select id="userState" class="state-selection__select">
+                    <option value="" selected disabled>Выберите состояние</option>
+                    <option value="anxiety">Тревогу и беспокойство</option>
+                    <option value="burnout">Усталость и выгорание</option>
+                    <option value="stress">Сильный стресс</option>
+                    <option value="apathy">Апатию и грусть</option>
+                    <option value="panic">Паническую атаку</option>
+                </select>
+                <span class="state-selection__select-arrow">▼</span>
+            </div>
+            <button id="stateActionBtn" class="state-selection__button">
+                Получить помощь
+                <span class="state-selection__btn-icon">→</span>
+            </button>
+        </div>
+    </div>
+</div>
 
         <!-- БЛОК: features-grid (ключевые возможности) -->
         <section class="features-grid" aria-labelledby="featuresTitle">
@@ -197,7 +220,7 @@
     </main>
 
     <!-- БЛОК: footer (подвал) -->
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="footer__container container">
             <div class="footer__main text-center">
                 <p class="footer__text">
