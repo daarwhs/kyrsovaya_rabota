@@ -9,6 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const notesInput = document.getElementById('moodNotes');
     const saveBtn = document.getElementById('saveMood');
     const historyList = document.getElementById('moodHistoryList');
+    const toggleThoughtDiaryBtn = document.getElementById('toggleThoughtDiary');
+    const thoughtDiaryContent = document.getElementById('thoughtDiaryContent');
+    const saveThoughtBtn = document.getElementById('saveThought');
+    const exportThoughtsBtn = document.getElementById('exportThoughts');
+    const thoughtHistoryList = document.getElementById('thoughtHistoryList');
+
+    const thoughtSituation = document.getElementById('thoughtSituation');
+    const thoughtAutomatic = document.getElementById('thoughtAutomatic');
+    const thoughtEmotion = document.getElementById('thoughtEmotion');
+    const thoughtIntensity = document.getElementById('thoughtIntensity');
+    const thoughtDistortions = document.getElementById('thoughtDistortions');
+    const thoughtEvidenceFor = document.getElementById('thoughtEvidenceFor');
+    const thoughtEvidenceAgainst = document.getElementById('thoughtEvidenceAgainst');
+    const thoughtAlternative = document.getElementById('thoughtAlternative');
+    const thoughtOutcomeIntensity = document.getElementById('thoughtOutcomeIntensity');
     let chartCanvas = document.getElementById('moodChart');
     let moodChart = null;
 
@@ -60,6 +75,190 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
     });
+
+    // === ДНЕВНИК МЫСЛЕЙ: ПОКАЗ/СКРЫТИЕ ===
+    if (toggleThoughtDiaryBtn && thoughtDiaryContent) {
+        toggleThoughtDiaryBtn.addEventListener('click', () => {
+            const isHidden = thoughtDiaryContent.hasAttribute('hidden');
+            if (isHidden) {
+                thoughtDiaryContent.removeAttribute('hidden');
+                toggleThoughtDiaryBtn.textContent = 'Скрыть дневник мыслей';
+            } else {
+                thoughtDiaryContent.setAttribute('hidden', '');
+                toggleThoughtDiaryBtn.textContent = 'Показать дневник мыслей';
+            }
+        });
+    }
+
+    // === ДНЕВНИК МЫСЛЕЙ: ХРАНЕНИЕ ===
+    function getThoughtEntries() {
+        try {
+            const data = localStorage.getItem('thoughtEntries');
+            if (!data) return [];
+            const entries = JSON.parse(data);
+            return Array.isArray(entries) ? entries.filter(e => e && e.timestamp) : [];
+        } catch {
+            return [];
+        }
+    }
+
+    function saveThoughtEntry(entry) {
+        try {
+            const entries = getThoughtEntries();
+            entries.push(entry);
+            localStorage.setItem('thoughtEntries', JSON.stringify(entries));
+            return true;
+        } catch {
+            return false;
+        }
+    }
+
+    // === ДНЕВНИК МЫСЛЕЙ: СОХРАНЕНИЕ ===
+    if (saveThoughtBtn) {
+        saveThoughtBtn.addEventListener('click', () => {
+            const entry = {
+                date: new Date().toISOString().split('T')[0],
+                situation: (thoughtSituation?.value || '').trim(),
+                automatic: (thoughtAutomatic?.value || '').trim(),
+                emotion: (thoughtEmotion?.value || '').trim(),
+                intensity: Math.max(0, Math.min(100, parseInt(thoughtIntensity?.value || '')) || 0),
+                distortions: (thoughtDistortions?.value || '').trim(),
+                evidenceFor: (thoughtEvidenceFor?.value || '').trim(),
+                evidenceAgainst: (thoughtEvidenceAgainst?.value || '').trim(),
+                alternative: (thoughtAlternative?.value || '').trim(),
+                outcomeIntensity: Math.max(0, Math.min(100, parseInt(thoughtOutcomeIntensity?.value || '')) || 0),
+                timestamp: Date.now()
+            };
+
+            if (!entry.automatic) {
+                window.utils?.showNotification?.('Введите автоматическую мысль', 'warning') || alert('Введите автоматическую мысль');
+                return;
+            }
+
+            const ok = saveThoughtEntry(entry);
+
+            if (ok) {
+                [thoughtSituation, thoughtAutomatic, thoughtEmotion, thoughtIntensity, thoughtDistortions, thoughtEvidenceFor, thoughtEvidenceAgainst, thoughtAlternative, thoughtOutcomeIntensity].forEach(el => {
+                    if (el) el.value = '';
+                });
+            }
+
+            renderThoughtHistory();
+            window.utils?.showNotification?.('Мысль сохранена! 🧠', 'success');
+        });
+    }
+
+    // === ДНЕВНИК МЫСЛЕЙ: РЕНДЕР ===
+    function renderThoughtHistory() {
+        if (!thoughtHistoryList) return;
+        const entries = getThoughtEntries().reverse();
+        thoughtHistoryList.innerHTML = entries.length === 0
+            ? '<p style="text-align:center; color:#888; padding:2rem;">Пока нет записей мыслей</p>'
+            : '';
+
+        entries.forEach(entry => {
+            const item = document.createElement('div');
+            item.className = 'thought-history__item';
+            item.innerHTML = `
+                <div class="thought-history__item-header">
+                    <div class="thought-history__item-date"><strong>${formatDate(entry.date)}</strong></div>
+                    <div class="thought-history__item-emotion">
+                        <span>${entry.emotion || 'эмоция'}</span>
+                        <span class="thought-intensity">${entry.intensity}% → ${entry.outcomeIntensity}%</span>
+                    </div>
+                </div>
+                <div class="thought-history__block">
+                    <div class="thought-label">Ситуация</div>
+                    <div class="thought-text">${entry.situation || ''}</div>
+                </div>
+                <div class="thought-history__block">
+                    <div class="thought-label">Автоматическая мысль</div>
+                    <div class="thought-text">${entry.automatic || ''}</div>
+                </div>
+                ${entry.distortions ? `
+                <div class="thought-history__block">
+                    <div class="thought-label">Искажения</div>
+                    <div class="thought-text">${entry.distortions}</div>
+                </div>` : ''}
+                ${(entry.evidenceFor || entry.evidenceAgainst) ? `
+                <div class="thought-history__blocks">
+                    ${entry.evidenceFor ? `
+                    <div class="thought-history__block">
+                        <div class="thought-label">Доказательства «за»</div>
+                        <div class="thought-text">${entry.evidenceFor}</div>
+                    </div>` : ''}
+                    ${entry.evidenceAgainst ? `
+                    <div class="thought-history__block">
+                        <div class="thought-label">Доказательства «против»</div>
+                        <div class="thought-text">${entry.evidenceAgainst}</div>
+                    </div>` : ''}
+                </div>` : ''}
+                ${entry.alternative ? `
+                <div class="thought-history__block">
+                    <div class="thought-label">Альтернативная мысль</div>
+                    <div class="thought-text">${entry.alternative}</div>
+                </div>` : ''}
+                <div class="thought-actions">
+                    <button class="btn-delete" data-timestamp="${entry.timestamp}">Удалить</button>
+                </div>
+            `;
+            thoughtHistoryList.appendChild(item);
+        });
+
+        thoughtHistoryList.querySelectorAll('.btn-delete').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const ts = parseInt(btn.dataset.timestamp);
+                if (confirm('Удалить эту запись мысли?')) {
+                    let entries = getThoughtEntries();
+                    entries = entries.filter(e => e.timestamp !== ts);
+                    localStorage.setItem('thoughtEntries', JSON.stringify(entries));
+                    renderThoughtHistory();
+                }
+            });
+        });
+    }
+
+    // === ДНЕВНИК МЫСЛЕЙ: ЭКСПОРТ ===
+    if (exportThoughtsBtn) {
+        exportThoughtsBtn.addEventListener('click', () => {
+            const entries = getThoughtEntries();
+            if (entries.length === 0) {
+                window.utils?.showNotification?.('Нет данных для экспорта', 'warning') || alert('Нет данных');
+                return;
+            }
+            const exportData = entries.map(e => ({
+                'Дата': formatDate(e.date),
+                'Ситуация': e.situation || '',
+                'Авто. мысль': e.automatic || '',
+                'Эмоция': e.emotion || '',
+                'Интенсивность до (%)': e.intensity ?? '',
+                'Интенсивность после (%)': e.outcomeIntensity ?? '',
+                'Искажения': e.distortions || '',
+                'Доказательства за': e.evidenceFor || '',
+                'Доказательства против': e.evidenceAgainst || '',
+                'Альтернативная мысль': e.alternative || '',
+                'Полная дата': new Date(e.timestamp).toLocaleString('ru-RU')
+            }));
+
+            if (window.utils?.exportData) {
+                window.utils.exportData(exportData, 'mindcare_дневник_мыслей', 'csv');
+            } else {
+                const headers = Object.keys(exportData[0]);
+                const csv = [
+                    headers.join(','),
+                    ...exportData.map(row => headers.map(h => `"${(row[h] || '').toString().replace(/"/g, '""')}"`).join(','))
+                ].join('\n');
+                const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'mindcare_дневник_мыслей.csv';
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+            window.utils?.showNotification?.('Данные экспортированы! 🗒️', 'success');
+        });
+    }
 
     // === РАБОТА С LOCALSTORAGE ===
     function getEntries() {

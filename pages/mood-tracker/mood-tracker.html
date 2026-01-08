@@ -108,6 +108,75 @@
                     </div>
                     <div class="mood-history__list" id="moodHistoryList"></div>
                 </div>
+
+                <section class="thought-diary">
+                    <div class="section-title">
+                        <div class="section-title__icon">🧠</div>
+                        <h2 class="section-title__heading">Дневник автоматических мыслей</h2>
+                        <p class="section-title__text">Переоценка мыслей по методике КБТ</p>
+                    </div>
+                    <div class="thought-diary__controls">
+                        <button class="test-card__button" id="toggleThoughtDiary">Показать дневник мыслей</button>
+                    </div>
+                    <div class="thought-diary__content" id="thoughtDiaryContent" hidden>
+                        <div class="thought-form">
+                            <h3 class="thought-form__title">Запись автоматической мысли</h3>
+                            <div class="thought-form__grid">
+                                <label class="thought-form__field">
+                                    <span>Ситуация</span>
+                                    <textarea id="thoughtSituation" rows="3" placeholder="Кратко опишите ситуацию"></textarea>
+                                </label>
+                                <label class="thought-form__field">
+                                    <span>Автоматическая мысль</span>
+                                    <textarea id="thoughtAutomatic" rows="3" placeholder="Какая мысль возникла?"></textarea>
+                                </label>
+                                <div class="thought-form__row">
+                                    <label class="thought-form__field">
+                                        <span>Эмоция</span>
+                                        <input id="thoughtEmotion" type="text" placeholder="Например: тревога">
+                                    </label>
+                                    <label class="thought-form__field">
+                                        <span>Интенсивность, %</span>
+                                        <input id="thoughtIntensity" type="number" min="0" max="100" placeholder="0–100">
+                                    </label>
+                                </div>
+                                <label class="thought-form__field">
+                                    <span>Искажения</span>
+                                    <input id="thoughtDistortions" type="text" placeholder="Например: катастрофизация, чтение мыслей">
+                                </label>
+                                <label class="thought-form__field">
+                                    <span>Доказательства «за»</span>
+                                    <textarea id="thoughtEvidenceFor" rows="3" placeholder="Факты, подтверждающие мысль"></textarea>
+                                </label>
+                                <label class="thought-form__field">
+                                    <span>Доказательства «против»</span>
+                                    <textarea id="thoughtEvidenceAgainst" rows="3" placeholder="Факты, опровергающие мысль"></textarea>
+                                </label>
+                                <label class="thought-form__field">
+                                    <span>Альтернативная мысль</span>
+                                    <textarea id="thoughtAlternative" rows="3" placeholder="Более сбалансированная мысль"></textarea>
+                                </label>
+                                <div class="thought-form__row">
+                                    <label class="thought-form__field">
+                                        <span>Интенсивность после, %</span>
+                                        <input id="thoughtOutcomeIntensity" type="number" min="0" max="100" placeholder="0–100">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="thought-form__actions">
+                                <button class="test-card__button" id="saveThought">Сохранить мысль</button>
+                                <button class="test-card__button" id="exportThoughts">Экспорт CSV</button>
+                            </div>
+                        </div>
+                        <div class="thought-history">
+                            <div class="thought-history__header">
+                                <div class="thought-history__icon">🗒️</div>
+                                <h3 class="thought-history__title">Ваши записи мыслей</h3>
+                            </div>
+                            <div class="thought-history__list" id="thoughtHistoryList"></div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
     </main>

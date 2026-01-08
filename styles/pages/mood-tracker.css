@@ -376,3 +376,180 @@
     }
 }
 
+/* ============================================
+   ДНЕВНИК АВТОМАТИЧЕСКИХ МЫСЛЕЙ
+   ============================================ */
+
+.thought-diary {
+    margin-top: var(--spacing-12);
+}
+
+.thought-diary__controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--spacing-4);
+}
+
+.thought-diary__content {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-6);
+}
+
+.thought-form__title {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-4);
+    font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.thought-form__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+}
+
+.thought-form__field {
+    display: grid;
+    gap: var(--spacing-2);
+}
+
+.thought-form__field span {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+}
+
+.thought-form__field input,
+.thought-form__field textarea {
+    width: 100%;
+    padding: var(--spacing-4) var(--spacing-5);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-primary);
+    background: var(--color-background-light);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-normal);
+}
+
+.thought-form__field textarea::placeholder,
+.thought-form__field input::placeholder {
+    color: var(--color-text-light);
+}
+
+.thought-form__field input:focus,
+.thought-form__field textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px var(--color-accent-transparent);
+    background: var(--color-card-bg);
+}
+
+.thought-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4);
+}
+
+.thought-form__actions {
+    display: flex;
+    gap: var(--spacing-4);
+    align-items: center;
+}
+
+.thought-history__item {
+    background: var(--color-card-bg);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-6);
+    margin-bottom: var(--spacing-4);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.thought-history__item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.thought-history__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-3);
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+}
+
+.thought-history__item-date {
+    font-size: var(--font-size-lg);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+.thought-history__item-emotion {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.thought-intensity {
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.thought-history__block {
+    background: var(--color-background-dark);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-4);
+    margin-top: var(--spacing-3);
+}
+
+.thought-history__blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-3);
+}
+
+.thought-label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-2);
+}
+
+.thought-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+.thought-actions {
+    margin-top: var(--spacing-3);
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 767px) {
+    .thought-form__row {
+        grid-template-columns: 1fr;
+    }
+    .thought-history__blocks {
+        grid-template-columns: 1fr;
+    }
+}
+

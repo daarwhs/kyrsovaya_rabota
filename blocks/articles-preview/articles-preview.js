@@ -47,15 +47,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         titleEl.textContent = article.title;
+        const annotationText = sanitizeCardText(article.annotation || article.excerpt || '');
         bodyEl.innerHTML = `
             <div class="article-modal__meta">
                 <span class="article-modal__category">${article.category || ''}</span>
                 <span class="article-modal__date">${formatDate(article.date)}</span>
                 <span class="article-modal__read-time">${article.readTime} мин чтения</span>
             </div>
+            ${annotationText ? `<div class="article-modal__annotation">${annotationText}</div>` : ''}
             <div class="article-modal__content">
                 ${content}
             </div>
+            ${article.readMoreUrl ? `
+            <div class="article-modal__actions">
+                <a href="${article.readMoreUrl}" target="_blank" rel="noopener noreferrer" class="btn btn--primary article-modal__read-more">Перейти к источнику</a>
+            </div>` : ''}
         `;
 
         modal.hidden = false;
@@ -135,7 +141,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                             <span>${formatDate(article.date)}</span> • ${article.readTime} мин чтения
                         </div>
                         <button class="article-card__toggle test-card__button" data-article-id="${article.id}">
-                            Читать полностью
+                            Подробнее
                         </button>
                     </div>
                 </article>
