@@ -93,10 +93,10 @@
 ##  Ссылки
 
 - **Репозиторий:**  
-  https://github.com/daarwhs/project_kursovaya_rabota.git  
+  https://github.com/daarwhs/kyrsovaya_rabota.git  
 
-- **GitHub Pages (демо):**  
-  https://daarwhs.github.io/project_kursovaya_rabota/  
+- **GitHub Pages:**  
+  https://daarwhs.github.io/kyrsovaya_rabota/ 
 
 ---
 
